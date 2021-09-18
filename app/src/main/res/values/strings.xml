@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Online Shopping Application</string>
+
+    <string-array name="currency">
+        <item>USD</item>
+        <item>LKR</item>
+        <item>SGD</item>
+        <item>AUD</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Sinhala</item>
+        <item>Tamil</item>
+    </string-array>
 </resources>
