@@ -14,15 +14,24 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentInformationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SelectPaymentActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeleveryInformationActivity"
             android:exported="true" />
         <activity android:name=".MainActivity">
 
