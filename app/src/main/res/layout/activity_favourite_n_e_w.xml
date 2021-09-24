@@ -127,7 +127,7 @@
                             android:alignmentMode="alignMargins">
 
                             <ImageView
-                                android:id="@+id/imageView9"
+                                android:id="@+id/imageV"
                                 android:layout_width="62dp"
                                 android:layout_height="49dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -137,7 +137,7 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p"
+                                android:id="@+id/price1"
                                 android:layout_width="84dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
@@ -157,7 +157,7 @@
                                 android:layout_marginLeft="10dp"
                                 app:backgroundTint="@android:color/holo_blue_dark"/>
                             <Button
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageButtonstr"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
@@ -358,7 +358,7 @@
                             android:alignmentMode="alignMargins">
 
                             <ImageView
-                                android:id="@+id/imageView9"
+                                android:id="@+id/imageView"
                                 android:layout_width="62dp"
                                 android:layout_height="49dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -368,7 +368,7 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p"
+                                android:id="@+id/price2"
                                 android:layout_width="84dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
@@ -388,7 +388,7 @@
                                 android:layout_marginLeft="10dp"
                                 app:backgroundTint="@android:color/holo_blue_dark"/>
                             <Button
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageButtonstr1"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
@@ -435,7 +435,7 @@
                             android:alignmentMode="alignMargins">
 
                             <ImageView
-                                android:id="@+id/imageView9"
+                                android:id="@+id/imageView94"
                                 android:layout_width="62dp"
                                 android:layout_height="49dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -445,7 +445,7 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p"
+                                android:id="@+id/price3"
                                 android:layout_width="84dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
@@ -465,7 +465,7 @@
                                 android:layout_marginLeft="10dp"
                                 app:backgroundTint="@android:color/holo_blue_dark"/>
                             <Button
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageButtonstr2"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
@@ -512,7 +512,7 @@
                             android:alignmentMode="alignMargins">
 
                             <ImageView
-                                android:id="@+id/imageView9"
+                                android:id="@+id/imageView54"
                                 android:layout_width="62dp"
                                 android:layout_height="49dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -522,7 +522,7 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p"
+                                android:id="@+id/price4"
                                 android:layout_width="84dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
@@ -542,7 +542,7 @@
                                 android:layout_marginLeft="10dp"
                                 app:backgroundTint="@android:color/holo_blue_dark"/>
                             <Button
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageButtonstr4"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
