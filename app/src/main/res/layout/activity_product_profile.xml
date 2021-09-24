@@ -146,7 +146,7 @@
         app:srcCompat="@drawable/frock" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonnext"
         android:layout_width="170dp"
         android:layout_height="63dp"
         android:text="Add To Cart"
