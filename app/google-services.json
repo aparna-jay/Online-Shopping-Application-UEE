@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "285851128887",
+    "project_id": "online-shopping-applicat-a6cd2",
+    "storage_bucket": "online-shopping-applicat-a6cd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285851128887:android:b56b18c417baf771135bb2",
+        "android_client_info": {
+          "package_name": "com.uee.onlineshoppingapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285851128887-vel4sq0lbmhq1857nk7fjf9panhcbkua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw4FqUaGKNpaihtFqCbUY5keejhstuv9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285851128887-vel4sq0lbmhq1857nk7fjf9panhcbkua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

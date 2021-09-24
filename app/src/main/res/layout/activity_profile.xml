@@ -79,7 +79,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="129dp" />
+        tools:layout_editor_absoluteY="101dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -88,7 +88,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="217dp" />
+        tools:layout_editor_absoluteY="214dp" />
 
     <TextView
         android:id="@+id/textView15"
