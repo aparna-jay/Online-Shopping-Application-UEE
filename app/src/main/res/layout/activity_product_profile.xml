@@ -149,6 +149,7 @@
         android:id="@+id/button"
         android:layout_width="170dp"
         android:layout_height="63dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="Add To Cart"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"

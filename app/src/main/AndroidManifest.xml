@@ -10,8 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShoppingApplication">
 
-        <activity android:name=".ShoppingCartActivity"></activity>
-        <activity android:name=".ProductProfileActivity" />
+        <activity android:name=".ShoppingCartActivity">
+
+        </activity>
+        <activity android:name=".ProductProfileActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ProfileActivity"
@@ -25,11 +33,7 @@
         <activity
             android:name=".SelectPaymentActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
