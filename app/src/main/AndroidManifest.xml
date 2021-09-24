@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShoppingApplication">
-
-        <activity android:name=".ShoppingCartActivity"></activity>
+        <activity android:name=".FavouriteActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".hOMEActivity" />
+        <activity android:name=".ShoppingCartActivity" />
         <activity android:name=".ProductProfileActivity" />
-
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
@@ -24,7 +25,7 @@
             android:exported="true" />
         <activity
             android:name=".SelectPaymentActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +39,6 @@
             android:name=".DeleveryInformationActivity"
             android:exported="true" />
         <activity android:name=".MainActivity" />
-
     </application>
 
 </manifest>
