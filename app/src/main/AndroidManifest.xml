@@ -14,11 +14,7 @@
 
         </activity>
         <activity android:name=".ProductProfileActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -37,7 +33,13 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".DeleveryInformationActivity"
             android:exported="true" />
