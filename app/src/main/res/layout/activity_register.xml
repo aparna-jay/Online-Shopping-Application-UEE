@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/address"
         android:layout_width="276dp"
         android:layout_height="78dp"
         android:ems="10"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.472" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addUser"
         android:layout_width="177dp"
         android:layout_height="48dp"
         android:text="Register"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.874" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/email"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.714" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/username"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -117,7 +117,7 @@
         app:layout_constraintVertical_bias="0.78" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -170,7 +170,7 @@
         app:layout_constraintVertical_bias="0.97" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/phone"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
