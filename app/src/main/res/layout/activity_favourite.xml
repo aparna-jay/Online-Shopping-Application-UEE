@@ -113,6 +113,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="11dp"
             android:text="ADD TO CART"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/p"
             app:layout_constraintTop_toTopOf="parent"
@@ -196,6 +197,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="11dp"
             android:text="ADD TO CART"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/p1"
             app:layout_constraintTop_toTopOf="parent"
@@ -263,6 +265,7 @@
             android:layout_marginStart="7dp"
             android:layout_marginLeft="7dp"
             android:text="ADD TO CART"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/p5"
             app:layout_constraintTop_toTopOf="parent"
@@ -317,6 +320,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="11dp"
             android:text="ADD TO CART"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView22"
             app:layout_constraintStart_toEndOf="@+id/p3"
@@ -403,10 +407,12 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="9dp"
             android:text="ADD TO CART"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             app:layout_constraintStart_toEndOf="@+id/p4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
