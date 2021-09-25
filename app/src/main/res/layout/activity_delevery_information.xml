@@ -11,6 +11,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Contact Number"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,16 +20,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="237dp"
-        android:layout_height="35dp"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
         android:text="Enter Delivery Information"
-        android:textSize="19sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <EditText
         android:id="@+id/textboxtp"
@@ -48,6 +50,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Name"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +73,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Delivery Address"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:textSize="19sp"
         app:backgroundTint="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
