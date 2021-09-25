@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Online Shopping Application</string>
+    <!--    <style name="app" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--        -->
+
+    <!--    </style>-->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<!--        <item name="drawerArrowStyle">@style/DrawerIcon</item>-->
+<!--        <item name="android:divider">@drawable/menu_item_padding</item>-->
+<!--        <item name="android:listDivider">@android:color/transparent</item>-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+
+    </style>
+
+<!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">-->
+<!--    </style>-->
+
+    <style name="AppTheme.popUpOverlay" parent="ThemeOverlay.AppCompat.Light"></style>
+<!--    <style name="TextViewStyle" parent="android:Widget.TextView">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">-->
+<!--        <item name="color">#AE000000</item>-->
+<!--    </style>-->
 </resources>
