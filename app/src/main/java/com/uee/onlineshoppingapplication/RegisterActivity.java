@@ -36,6 +36,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
         username = (TextView) findViewById(R.id.username);
+        email = (TextView) findViewById(R.id.email);
+        address = (TextView) findViewById(R.id.address);
+        phone = (TextView) findViewById(R.id.phone);
+        password = (TextView) findViewById(R.id.password);
         addUser = (Button) findViewById(R.id.addUser);
 
         users = new ArrayList<>();
@@ -46,9 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
                 addUsers();
             }
         });
-
-
-
     }
 
 
@@ -68,13 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
                     //getting artist
                     User user = postSnapshot.getValue(User.class);
                     //adding artist to the list
-                    Log.e("UserList", " " + user.getUsername());
+                    Log.e("UserList", " " + user.getUsername()+ user.getEmail()+ user.getAddress()
+                            + user.getPhone()+ user.getPassword());
                     users.add(user);
                 }
-
-
-
-
 //                //creating adapter
 //                UserList artistAdapter = new ArtistList(MainActivity.this, artists);
 //                //attaching adapter to the listview
@@ -97,6 +95,10 @@ public class RegisterActivity extends AppCompatActivity {
     private void addUsers() {
         //getting the values to save
         String name = username.getText().toString().trim();
+        String email1 = email.getText().toString().trim();
+        String address1 = address.getText().toString().trim();
+        String phone1 = phone.getText().toString().trim();
+        String password1 = password.getText().toString().trim();
         //       String genre = spinnerGenre.getSelectedItem().toString();
 
         //checking if the value is provided
@@ -107,13 +109,17 @@ public class RegisterActivity extends AppCompatActivity {
             String id = databaseUsers.push().getKey();
 
             //creating an Artist Object
-            User user = new User(id, name);
+            User user = new User(id, name,email1,address1,phone1,password1);
 
             //Saving the Artist
             databaseUsers.child(id).setValue(user);
 
             //setting edittext to blank again
             username.setText("");
+            email.setText("");
+            address.setText("");
+            phone.setText("");
+            password.setText("");
 
             //displaying a success toast
             Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
