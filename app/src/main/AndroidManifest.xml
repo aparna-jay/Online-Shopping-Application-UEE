@@ -13,17 +13,13 @@
 
         </activity>
         <activity android:name=".ScrollActivity">
-
-        </activity>
-        <activity android:name=".FavouriteActivity"></activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".ShoppingCartActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ShoppingCartActivity"></activity>
         <activity android:name=".ProductProfileActivity" />
         <activity
             android:name=".ProfileActivity"
@@ -43,12 +39,8 @@
         <activity
             android:name=".DeleveryInformationActivity"
             android:exported="true" />
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
