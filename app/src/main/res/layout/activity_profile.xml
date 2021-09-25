@@ -73,7 +73,7 @@
         app:layout_constraintVertical_bias="0.617" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/textboxaddress"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -82,7 +82,7 @@
         tools:layout_editor_absoluteY="101dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/tbEXPDate"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:ems="10"
