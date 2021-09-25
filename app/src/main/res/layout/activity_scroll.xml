@@ -2,622 +2,642 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ScrollActivity"
-    android:background="@drawable/background">
+    >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/nav_view"-->
+<!--        app:headerLayout="@layout/header"-->
+<!--        app:menu="@menu/main_menu"-->
+<!--        android:layout_gravity="start" />-->
 
-        <RelativeLayout
+<!--    <ScrollView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <include-->
+<!--            layout="@layout/toolbar"/>-->
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtLogo"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:textColor="#FFF"
-                android:text="Lehesi.lk"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="20dp">
 
-            <ImageView
-                android:layout_width="52dp"
-                android:layout_height="50dp"
-                android:src="@drawable/lehesi"
-                android:layout_alignParentRight="true"/>
+                <TextView
+                    android:id="@+id/txtLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lehesi.lk"
+                    android:textColor="#FFF"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/lehesi" />
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:rowCount="2"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:alignmentMode="alignMargins">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="2">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/imageButton"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/imageButton"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button11"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button11"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button45"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button45"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button46"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button46"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button47"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button47"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button48"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button48"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                        </GridLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button49"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button49"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
+                            </Button>
 
-            </androidx.cardview.widget.CardView>
+                        </GridLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button50"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
+                            <Button
+                                android:id="@+id/Button50"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-                </LinearLayout>
+                            </Button>
 
-            </androidx.cardview.widget.CardView>
+                        </GridLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                    <GridLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="2"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <Button
-                            android:layout_width="121dp"
-                            android:layout_height="53dp"
-                            android:layout_marginTop="12dp"
-                            android:textSize="12dp"
-                            android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/frock" />
 
-                        </Button>
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:columnOrderPreserved="false"
+                            android:rowCount="2">
 
-                        <Button
-                            android:id="@+id/Button51"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="19dp"
-                            android:layout_marginBottom="29dp"
-                            android:background="@drawable/star"
-                            app:backgroundTint="#0C0C0C">
+                            <Button
+                                android:layout_width="121dp"
+                                android:layout_height="53dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Add to cart"
+                                android:textSize="12dp"
+                                app:backgroundTint="@android:color/holo_blue_dark">
 
-                        </Button>
+                            </Button>
 
-                    </GridLayout>
-                </LinearLayout>
+                            <Button
+                                android:id="@+id/Button51"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="19dp"
+                                android:layout_marginBottom="29dp"
+                                android:background="@drawable/star"
+                                app:backgroundTint="#0C0C0C">
 
-            </androidx.cardview.widget.CardView>
+                            </Button>
 
-        </GridLayout>
+                        </GridLayout>
+                    </LinearLayout>
 
-    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-</ScrollView>
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+<!--</androidx.drawerlayout.widget.DrawerLayout>-->

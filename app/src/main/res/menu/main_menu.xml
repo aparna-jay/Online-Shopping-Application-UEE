@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/cart_icon"
+            android:title="Cart" />
+
+        <item
+            android:id="@+id/nav_favourites"
+            android:icon="@drawable/favorite_icon"
+            android:title="Favourite" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Profile">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/account_icon"
+                    android:title="Profile" />
+
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/login_icon"
+                    android:title="Login" />
+
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Contact Us">
+
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/share_icon"
+                android:title="Share" />
+
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_baseline_star_rate_24"
+                android:title="Rate" />
+
+        </menu>
+
+    </item>
+
+</menu>
