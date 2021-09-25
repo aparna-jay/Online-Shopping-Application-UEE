@@ -7,7 +7,7 @@
     tools:context=".ProductProfileActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Party Frock"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.394" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rs. 5250.00"
@@ -146,7 +146,7 @@
         app:srcCompat="@drawable/frock" />
 
     <Button
-        android:id="@+id/buttonnext"
+        android:id="@+id/addToCart"
         android:layout_width="170dp"
         android:layout_height="63dp"
         android:backgroundTint="@android:color/holo_blue_dark"
