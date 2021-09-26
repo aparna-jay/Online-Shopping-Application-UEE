@@ -4,40 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavouriteNEWActivity"
-    android:background="@drawable/backg"
-    >
+    tools:context=".FavouriteNEWActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="24dp"
-        >
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Favourite"
-                android:textColor="#224895"
-                android:textSize="24dp"
-                android:textStyle="bold|italic" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:text="Items"
-                android:textColor="#535050"
-                android:textSize="24dp"
-                android:textStyle="bold|italic" />
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.001"
+                    app:srcCompat="@drawable/bgimg" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Favourite"
+                    android:textColor="#224895"
+                    android:textSize="24dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Items"
+                    android:textColor="#535050"
+                    android:textSize="24dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+        </RelativeLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -80,7 +96,7 @@
                                 android:textColor="#000"
                                 android:textSize="16dp"
                                 android:textStyle="bold"
-                                android:layout_marginLeft="30dp"/>
+                                android:layout_marginLeft="35dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -88,7 +104,7 @@
                                 android:textColor="#000"
                                 android:textSize="16dp"
                                 android:textStyle="bold"
-                                android:layout_marginLeft="150dp"/>
+                                android:layout_marginLeft="180dp"/>
                         </GridLayout>
 
                     </LinearLayout>
@@ -138,10 +154,10 @@
 
                             <TextView
                                 android:id="@+id/price1"
-                                android:layout_width="84dp"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -154,16 +170,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
                                 android:id="@+id/imageButtonstr"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -215,10 +230,10 @@
 
                             <TextView
                                 android:id="@+id/p89"
-                                android:layout_width="84dp"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -231,16 +246,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
                                 android:id="@+id/imageButton5"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -291,11 +305,11 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p90"
-                                android:layout_width="84dp"
+                                android:id="@+id/p13"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -308,16 +322,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
-                                android:id="@+id/imageButton6"
+                                android:id="@+id/imageButton13"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -368,11 +381,11 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/price2"
-                                android:layout_width="84dp"
+                                android:id="@+id/p12"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -385,16 +398,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
-                                android:id="@+id/imageButtonstr1"
+                                android:id="@+id/imageButton12"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -445,11 +457,11 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/price3"
-                                android:layout_width="84dp"
+                                android:id="@+id/p10"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -462,16 +474,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
-                                android:id="@+id/imageButtonstr2"
+                                android:id="@+id/imageButton51"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -522,11 +533,11 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/price4"
-                                android:layout_width="84dp"
+                                android:id="@+id/p9"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -539,16 +550,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
-                                android:id="@+id/imageButtonstr4"
+                                android:id="@+id/imageButton11"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
@@ -599,11 +609,11 @@
                                 app:srcCompat="@drawable/frock" />
 
                             <TextView
-                                android:id="@+id/p"
-                                android:layout_width="84dp"
+                                android:id="@+id/p8"
+                                android:layout_width="100dp"
                                 android:layout_height="29dp"
                                 android:text="Rs. 1500.00"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginLeft="20dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -616,16 +626,15 @@
                                 android:layout_height="50dp"
                                 android:textSize="12dp"
                                 android:text="Add to cart"
-                                android:layout_marginLeft="10dp"
-                                android:backgroundTint="#334FEA"/>
+                                android:backgroundTint="#0E90FF"/>
                             <Button
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageButton10"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
+                                android:layout_marginLeft="35dp"
                                 android:layout_marginTop="11dp"
                                 android:background="@drawable/fillstar"
-                                app:backgroundTint="#0C0C0C">
+                                app:backgroundTint="#FF9800">
 
                             </Button>
                         </GridLayout>
