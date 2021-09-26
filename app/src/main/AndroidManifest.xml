@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShoppingApplication">
         <activity android:name=".FavouriteNEWActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ScrollActivity"></activity>
         <activity android:name=".ShoppingCartActivity"></activity>
@@ -26,22 +30,14 @@
             android:exported="true" />
         <activity
             android:name=".SelectPaymentActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".DeleveryInformationActivity"
-            android:exported="true"
-        />
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true" />
+        <activity android:name=".MainActivity">
 
         </activity>
 
