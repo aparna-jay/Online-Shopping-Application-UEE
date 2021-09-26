@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backg"
     tools:context=".DeleveryInformationActivity">
 
     <TextView
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:textSize="19sp"
-        app:backgroundTint="@android:color/holo_blue_dark"
+        app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"

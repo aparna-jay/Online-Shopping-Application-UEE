@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaymentInformationActivity">
+    tools:context=".PaymentInformationActivity"
+    android:background="@drawable/backg">
 
 
     <TextView
