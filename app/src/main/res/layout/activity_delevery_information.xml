@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backg"
     tools:context=".DeleveryInformationActivity">
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Contact Number"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,24 +21,24 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="237dp"
-        android:layout_height="35dp"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
         android:text="Enter Delivery Information"
-        android:textSize="19sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/textboxtp"
         android:layout_width="214dp"
         android:layout_height="41dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
@@ -50,6 +51,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Name"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,12 +59,11 @@
         app:layout_constraintVertical_bias="0.248" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/textboxaddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +74,7 @@
         android:layout_width="237dp"
         android:layout_height="35dp"
         android:text="Delivery Address"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,23 +82,23 @@
         app:layout_constraintVertical_bias="0.406" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/textboxname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
-        app:backgroundTint="@android:color/holo_blue_dark"
+        android:textSize="19sp"
+        app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"

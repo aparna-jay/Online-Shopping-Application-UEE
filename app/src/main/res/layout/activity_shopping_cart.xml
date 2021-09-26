@@ -405,7 +405,7 @@
         app:srcCompat="@drawable/delete" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnpay"
         android:layout_width="158dp"
         android:layout_height="61dp"
         android:text="Checkout"

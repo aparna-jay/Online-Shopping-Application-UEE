@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.953" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/textboxtp"
         android:layout_width="276dp"
         android:layout_height="35dp"
         android:background="@drawable/rounded_corners"
@@ -99,7 +99,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnNext"
         android:layout_width="159dp"
         android:layout_height="53dp"
         android:text="Login"
