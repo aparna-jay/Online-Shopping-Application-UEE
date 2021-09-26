@@ -2,10 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScrollActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".ScrollActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,24 +16,24 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
             android:layout_marginRight="20dp">
 
             <TextView
                 android:id="@+id/txtLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textStyle="bold"
+                android:text="Lehesi.lk"
                 android:textColor="#FFF"
-                android:text="Lehesi.lk"/>
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="52dp"
                 android:layout_height="50dp"
-                android:src="@drawable/lehesi"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:src="@drawable/lehesi" />
 
 
         </RelativeLayout>
@@ -40,46 +41,182 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="2"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:alignmentMode="alignMargins">
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alignmentMode="alignMargins"
+                                android:columnCount="4"
+                                android:columnOrderPreserved="false"
+                                android:rowCount="2">
+
+                                <SearchView
+                                    android:id="@+id/search"
+                                    android:layout_width="380dp"
+                                    android:layout_height="38dp"
+                                    android:background="#2F829297"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.05" />
+
+                            </GridLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alignmentMode="alignMargins"
+                        android:columnCount="2"
+                        android:columnOrderPreserved="false"
+                        android:rowCount="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="140dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.08"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/search"
+                            app:layout_constraintVertical_bias="0.120000005">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autoCompleteTextView5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:baselineAligned="false"
+                                android:inputType="none"
+                                android:text="USD" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="140dp"
+                            android:layout_marginLeft="50dp"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+                            app:layout_constraintTop_toBottomOf="@+id/search"
+                            app:layout_constraintVertical_bias="0.050000012">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autoCompleteTextView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:baselineAligned="false"
+                                android:inputType="none"
+                                android:text="English" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </GridLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
+
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -104,39 +241,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -161,39 +298,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -218,39 +355,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -275,39 +412,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -332,39 +469,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -389,39 +526,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -446,39 +583,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -504,39 +641,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -562,39 +699,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock"/>
+                        android:src="@drawable/frock" />
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="2"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
+                        android:rowCount="2">
 
                         <Button
                             android:layout_width="121dp"
                             android:layout_height="53dp"
                             android:layout_marginTop="12dp"
-                            android:textSize="12dp"
+                            android:backgroundTint="#334FEA"
                             android:text="Add to cart"
-                            app:backgroundTint="@android:color/holo_blue_dark">
+                            android:textSize="12dp">
 
                         </Button>
 
@@ -619,5 +756,4 @@
         </GridLayout>
 
     </LinearLayout>
-
 </ScrollView>

@@ -11,15 +11,15 @@ public class User {
     public String address;
     public String phone;
     public String password;
-    //
-//    public User(String username, String email, String address, String phone, String password) {
-    public User(String id, String username) {
-        this.id = id;
+//
+    public User(String id,String username, String email, String address, String phone, String password) {
+//        public User(String id, String username) {
+            this.id = id;
         this.username = username;
-//        this.email = email;
-//        this.address = address;
-//        this.phone = phone;
-//        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.password = password;
     }
 
     public User() {
