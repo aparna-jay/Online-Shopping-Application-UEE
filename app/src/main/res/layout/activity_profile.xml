@@ -4,21 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
-    android:background="@drawable/backg">
+    tools:context=".ProfileActivity">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="217dp"
-        android:layout_height="47dp"
-        android:text="Update Profile"
-        app:backgroundTint="@android:color/holo_orange_light"
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89" />
+        app:layout_constraintVertical_bias="0.001"
+        app:srcCompat="@drawable/bgimg" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="349dp"
+        android:layout_height="557dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681"
+        app:srcCompat="@drawable/formbackground" />
 
     <Button
         android:id="@+id/button4"
@@ -28,23 +41,9 @@
         app:backgroundTint="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="217dp"
-        android:layout_height="47dp"
-        android:text="Delete Profile"
-        app:backgroundTint="@color/design_default_color_error"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
@@ -54,7 +53,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="160/12/A,Colombo"
+        android:text=" "
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -71,7 +70,6 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Duhithu Skuni"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -104,7 +102,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="phone"
-        android:text="0712121211"
+        android:text=" "
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -137,7 +135,6 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="123"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -155,7 +152,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="duhithus@gmail.com"
+        android:text=" "
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -221,9 +218,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.081" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
