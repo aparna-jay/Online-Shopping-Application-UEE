@@ -218,7 +218,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+                        android:id="@+id/img1"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -317,7 +317,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+
+                        android:id="@+id/img2"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -416,7 +417,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+                        android:id="@+id/img3"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -515,7 +516,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+                        android:id="@+id/img4"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -614,7 +615,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+                        android:id="@+id/img5"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -713,7 +714,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/frock" />
+                        android:id="@+id/img6"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
