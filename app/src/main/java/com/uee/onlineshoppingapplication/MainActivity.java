@@ -50,8 +50,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(MainActivity.this, HomeFragment.class);
                 startActivity(intent);
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                Intent intent6 = new Intent(MainActivity.this, ScrollActivity.class);
+                startActivity(intent6);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new HomeFragment()).commit();
                 break;
             case R.id.nav_cart:
                 Intent intent1 = new Intent(getApplicationContext(), ShoppingCartActivity.class);
