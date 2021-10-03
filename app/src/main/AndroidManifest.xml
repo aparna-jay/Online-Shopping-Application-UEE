@@ -18,6 +18,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".ShoppingCartActivity"></activity>
         <activity android:name=".ProductProfileActivity" />
@@ -32,7 +33,7 @@
             android:exported="true" />
         <activity
             android:name=".SelectPaymentActivity"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
