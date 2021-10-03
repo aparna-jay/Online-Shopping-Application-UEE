@@ -18,11 +18,9 @@
         <activity android:name=".ScrollActivity" />
         <activity android:name=".ShoppingCartActivity" >
         </activity>
-        <activity android:name=".ScrollActivity">
         <activity android:name=".ProductProfileActivity" >
         </activity>
-        <activity android:name=".ShoppingCartActivity"></activity>
-        <activity android:name=".ProductProfileActivity" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
