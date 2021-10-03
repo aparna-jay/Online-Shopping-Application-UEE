@@ -6,37 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".SelectPaymentActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        app:srcCompat="@drawable/bgimg" />
+
     <ImageView
         android:id="@+id/imageView19"
-        android:layout_width="349dp"
-        android:layout_height="650dp"
+        android:layout_width="321dp"
+        android:layout_height="392dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/formbackground" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="267dp"
-        android:layout_height="75dp"
-        android:gravity="center_horizontal"
-        android:text="Select your paymment methord"
-        android:textAlignment="center"
-        android:textColor="#FF0099CC"
-        android:textSize="23sp"
+        android:layout_width="289dp"
+        android:layout_height="47dp"
+        android:text="Select your payment method"
+        android:textColor="@color/black"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintVertical_bias="0.176" />
 
     <RadioGroup
         android:layout_width="282dp"
@@ -55,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:text="Card payment"
+            android:textColor="@color/black"
             android:textSize="19sp" />
 
         <RadioButton
@@ -62,13 +75,14 @@
             android:layout_width="233dp"
             android:layout_height="wrap_content"
             android:text="Cash on delivery"
+            android:textColor="@color/black"
             android:textSize="19sp" />
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonnext"
-        android:layout_width="101dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="NEXT"
         android:textColorLink="@color/purple_500"
         android:textSize="19sp"
@@ -78,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708" />
+        app:layout_constraintVertical_bias="0.691" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

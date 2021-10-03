@@ -19,8 +19,8 @@
         <activity android:name=".ShoppingCartActivity" >
         </activity>
         <activity android:name=".ProductProfileActivity" >
-
         </activity>
+
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
@@ -35,9 +35,7 @@
         </activity>
         <activity
             android:name=".SelectPaymentActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
