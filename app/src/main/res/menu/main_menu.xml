@@ -33,6 +33,12 @@
                     android:title="Profile" />
 
                 <item
+                    android:id="@+id/nav_payment"
+                    android:icon="@drawable/payment_icon"
+                    android:title="Payment" />
+
+
+                <item
                     android:id="@+id/nav_login"
                     android:icon="@drawable/login_icon"
                     android:title="Login" />
