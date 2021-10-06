@@ -43,6 +43,17 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/logo" />-->
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="228dp"
+        android:layout_height="126dp"
+        android:src="@drawable/lehesitext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".1"></ImageView>
+
     <TextView
         android:layout_width="225dp"
         android:layout_height="68dp"
