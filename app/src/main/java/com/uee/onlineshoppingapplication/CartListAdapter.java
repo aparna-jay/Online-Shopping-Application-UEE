@@ -45,7 +45,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
 
         ShoppingCart cart = cartItems.get(position);
         Picasso.get().load(cart.getImage()).into(image);
-        price.setText(String.valueOf(cart.getUnitPrice()));
+        price.setText("Rs. " + String.valueOf(cart.getPricePerItem()) + ".00");
         quantity.setText(String.valueOf(cart.getQuantity()));
 
         plus.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +56,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
-                updateReference.child("cart").child(cart.getId()).child("unitPrice").setValue(String.valueOf(totPrice));
+                updateReference.child("cart").child(cart.getId()).child("pricePerItem").setValue(String.valueOf(totPrice));
             }
         });
         minus.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
-                updateReference.child("cart").child(cart.getId()).child("unitPrice").setValue(String.valueOf(totPrice));
+                updateReference.child("cart").child(cart.getId()).child("pricePerItem").setValue(String.valueOf(totPrice));
             }
         });
         return listViewItem;
