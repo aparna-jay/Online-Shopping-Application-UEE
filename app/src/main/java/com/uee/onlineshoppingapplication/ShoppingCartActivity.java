@@ -26,6 +26,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     DatabaseReference dbref;
     List<ShoppingCart> carts;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
