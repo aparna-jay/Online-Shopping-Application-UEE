@@ -6,6 +6,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class ShoppingCart {
     public String id;
     public String userId;
+    public String image;
     public String itemName;
     public String unitPrice;
     public String quantity;
@@ -13,10 +14,11 @@ public class ShoppingCart {
     public ShoppingCart() {
     }
 
-    public ShoppingCart(String id, String userId, String itemName, String unitPrice, String quantity) {
+    public ShoppingCart(String id, String userId, String image, String itemName, String unitPrice, String quantity) {
         this.id = id;
         this.userId = userId;
         this.itemName = itemName;
+        this.image = image;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
     }
@@ -59,5 +61,13 @@ public class ShoppingCart {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

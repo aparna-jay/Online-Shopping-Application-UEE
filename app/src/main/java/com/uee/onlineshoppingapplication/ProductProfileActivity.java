@@ -58,7 +58,7 @@ public class ProductProfileActivity extends AppCompatActivity {
         String id = databaseCarts.push().getKey();
 
         //creating a cart Object
-        ShoppingCart shoppingCart = new ShoppingCart(id, userID, itemName, itemPrice, itemQuantity);
+        ShoppingCart shoppingCart = new ShoppingCart(id, userID, "abcdefg", itemName, itemPrice, itemQuantity);
 
         //Saving the cart item
         databaseCarts.child(id).setValue(shoppingCart);
