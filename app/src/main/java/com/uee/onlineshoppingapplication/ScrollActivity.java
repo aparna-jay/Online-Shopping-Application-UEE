@@ -26,7 +26,6 @@ public class ScrollActivity extends AppCompatActivity {
     ImageView Image4;
     ImageView Image5;
     ImageView Image6;
-    ImageView Image7;
 
 
 
