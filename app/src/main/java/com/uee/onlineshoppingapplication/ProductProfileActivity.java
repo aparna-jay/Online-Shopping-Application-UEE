@@ -56,9 +56,10 @@ public class ProductProfileActivity extends AppCompatActivity {
         //getting a unique id using push().getKey() method
         //it will create a unique id and we will use it as the Primary Key for cart item
         String id = databaseCarts.push().getKey();
+        int totalPrice = Integer.parseInt(itemPrice) * Integer.parseInt(itemQuantity);
 
         //creating a cart Object
-        ShoppingCart shoppingCart = new ShoppingCart(id, userID, itemName, itemPrice, itemQuantity);
+        ShoppingCart shoppingCart = new ShoppingCart(id, userID, "abcdefg", itemName, itemPrice, itemQuantity, String.valueOf(totalPrice));
 
         //Saving the cart item
         databaseCarts.child(id).setValue(shoppingCart);

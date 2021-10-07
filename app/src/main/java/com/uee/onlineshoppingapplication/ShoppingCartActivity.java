@@ -2,8 +2,12 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,16 +21,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCartActivity extends AppCompatActivity {
-
-
-    DatabaseReference databaseCarts;
+    ListView cartListView;
+    String user;
+    DatabaseReference dbref;
     List<ShoppingCart> carts;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
-        databaseCarts = FirebaseDatabase.getInstance().getReference("cart");
+        dbref = FirebaseDatabase.getInstance().getReference("cart");
+        cartListView = (ListView) findViewById(R.id.cartListView);
         carts = new ArrayList<>();
     }
 
@@ -34,7 +40,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //attaching value event listener
-        databaseCarts.addValueEventListener(new ValueEventListener() {
+        dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -49,12 +55,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
                     Log.e("Cart item list", " " + shoppingCart.getItemName());
                     carts.add(shoppingCart);
                 }
-
-
-//                //creating adapter
-//                UserList artistAdapter = new ArtistList(MainActivity.this, artists);
-//                //attaching adapter to the listview
-//                listViewArtists.setAdapter(artistAdapter);
+                CartListAdapter cartListAdapter = new CartListAdapter(ShoppingCartActivity.this, carts);
+                cartListView.setAdapter(cartListAdapter);
             }
 
             @Override
@@ -64,3 +66,14 @@ public class ShoppingCartActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
+
+//        if (LoginActivity.loggedUser == null){
+//            user = "null";
+//        }
+//        else {
+//            user = LoginActivity.loggedUser;
+//        }
+//        Log.e("Logged User", user);
