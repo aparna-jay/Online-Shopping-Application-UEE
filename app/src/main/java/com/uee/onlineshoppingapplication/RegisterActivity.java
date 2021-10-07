@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
         username = (TextView) findViewById(R.id.username);
         email = (TextView) findViewById(R.id.email);
-        address = (TextView) findViewById(R.id.phone);
+        address = (TextView) findViewById(R.id.address);
         phone = (TextView) findViewById(R.id.phone);
         password = (TextView) findViewById(R.id.password);
         addUser = (Button) findViewById(R.id.addUser);
