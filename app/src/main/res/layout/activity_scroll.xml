@@ -131,60 +131,71 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <GridLayout
-                        android:layout_width="match_parent"
+
+                    <Spinner
+                        android:id="@+id/languageSpinner"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:alignmentMode="alignMargins"
-                        android:columnCount="2"
-                        android:columnOrderPreserved="false"
-                        android:rowCount="1">
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/selectLanguage" />
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/textInputLayout"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                            android:layout_width="140dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.08"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/search"
-                            app:layout_constraintVertical_bias="0.120000005">
+<!--                    <GridLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:alignmentMode="alignMargins"-->
+<!--                        android:columnCount="2"-->
+<!--                        android:columnOrderPreserved="false"-->
+<!--                        android:rowCount="1">-->
 
-                            <AutoCompleteTextView
-                                android:id="@+id/autoCompleteTextView5"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:baselineAligned="false"
-                                android:inputType="none"
-                                android:text="@string/autoCompleteTextView5" />
-                        </com.google.android.material.textfield.TextInputLayout>
+<!--                        <com.google.android.material.textfield.TextInputLayout-->
+<!--                            android:id="@+id/textInputLayout"-->
+<!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--                            android:layout_width="140dp"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintHorizontal_bias="0.08"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/search"-->
+<!--                            app:layout_constraintVertical_bias="0.120000005">-->
 
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/textInputLayout2"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                            android:layout_width="140dp"
-                            android:layout_marginLeft="50dp"
-                            app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-                            app:layout_constraintTop_toBottomOf="@+id/search"
-                            app:layout_constraintVertical_bias="0.050000012">
-
-                            <AutoCompleteTextView
-                                android:id="@+id/autoCompleteTextView4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:baselineAligned="false"
-                                android:inputType="none"
-                                android:text="English" />
-                        </com.google.android.material.textfield.TextInputLayout>
+<!--                            <AutoCompleteTextView-->
+<!--                                android:id="@+id/autoCompleteTextView5"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:baselineAligned="false"-->
+<!--                                android:inputType="none"-->
+<!--                                android:text="@string/autoCompleteTextView5" />-->
+<!--                        </com.google.android.material.textfield.TextInputLayout>-->
 
 
-                    </GridLayout>
+<!--                        <com.google.android.material.textfield.TextInputLayout-->
+<!--                            android:id="@+id/textInputLayout2"-->
+<!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--                            android:layout_width="140dp"-->
+<!--                            android:layout_marginLeft="50dp"-->
+<!--                            app:layout_constraintStart_toEndOf="@+id/textInputLayout"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/search"-->
+<!--                            app:layout_constraintVertical_bias="0.050000012">-->
+
+<!--                            <AutoCompleteTextView-->
+<!--                                android:id="@+id/languageSpinner"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:baselineAligned="false"-->
+<!--                                android:inputType="none"-->
+<!--                                android:text="English" />-->
+<!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--                    </GridLayout>-->
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
