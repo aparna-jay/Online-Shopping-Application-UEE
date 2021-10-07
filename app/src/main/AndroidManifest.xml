@@ -13,26 +13,37 @@
         android:theme="@style/Theme.OnlineShoppingApplication">
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="true" />
-        <activity android:name=".FavouriteNEWActivity" />
+            android:exported="true"></activity>
+        <activity android:name=".FavouriteNEWActivity"></activity>
         <activity android:name=".ScrollActivity" />
-        <activity android:name=".ShoppingCartActivity"></activity>
-        <activity android:name=".ProductProfileActivity"></activity>
+        <activity android:name=".ShoppingCartActivity" >
+        </activity>
+        <activity android:name=".ProductProfileActivity" >
+
+        </activity>
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".PaymentInformationActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".SelectPaymentActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+    </activity>
         <activity
             android:name=".DeleveryInformationActivity"
             android:exported="true" />
