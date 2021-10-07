@@ -125,9 +125,21 @@
 
                     <Spinner
                         android:id="@+id/languageSpinner"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/selectLanguage" />
+
+                    <Spinner
+                        android:id="@+id/languageSpinner2"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="20dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
