@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
         username = (TextView) findViewById(R.id.username);
         email = (TextView) findViewById(R.id.email);
-        address = (TextView) findViewById(R.id.phone);
+        address = (TextView) findViewById(R.id.address);
         phone = (TextView) findViewById(R.id.phone);
         password = (TextView) findViewById(R.id.password);
         addUser = (Button) findViewById(R.id.addUser);
@@ -106,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             //getting a unique id using push().getKey() method
             //it will create a unique id and we will use it as the Primary Key for our Artist
-            String id = databaseUsers.push().getKey();
+            String id = email1.split("@")[0];
 
             //creating an Artist Object
             User user = new User(id, name,email1,address1,phone1,password1);
