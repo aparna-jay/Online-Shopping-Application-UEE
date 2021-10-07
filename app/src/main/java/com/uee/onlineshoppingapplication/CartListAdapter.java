@@ -22,7 +22,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
     List<ShoppingCart> cartItems;
     int totalQuantity;
     ImageButton plus, minus,delete;
-    DatabaseReference updateReference;
+    DatabaseReference updateReference, deleteReference;
 
     public CartListAdapter(Activity context, List<ShoppingCart> cartItems) {
         super(context, R.layout.cart_row, cartItems);
@@ -68,6 +68,13 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
                 updateReference.child("cart").child(cart.getId()).child("pricePerItem").setValue(String.valueOf(totPrice));
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteReference = FirebaseDatabase.getInstance().getReference();
+                deleteReference.child("cart").child(cart.getId()).removeValue();
             }
         });
         return listViewItem;
