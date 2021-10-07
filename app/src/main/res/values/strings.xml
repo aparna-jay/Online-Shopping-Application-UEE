@@ -3,4 +3,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="autoCompleteTextView5">USD</string>
+
+    <string-array name="card_types">
+        <item>Visa</item>
+        <item>Master</item>
+        <item>Debit-card</item>
+    </string-array>
 </resources>

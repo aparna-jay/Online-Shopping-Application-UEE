@@ -129,7 +129,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <EditText
+    <Spinner
         android:id="@+id/tbCardType"
         android:layout_width="270dp"
         android:layout_height="47dp"
