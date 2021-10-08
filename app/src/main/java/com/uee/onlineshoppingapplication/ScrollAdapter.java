@@ -20,12 +20,14 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
 
     private Activity context;
     List<ScrollHome> cartItems;
+    int number1;
     DatabaseReference updateReference;
 
-    public ScrollAdapter(Activity context, List<ScrollHome> cartItems) {
+    public ScrollAdapter(Activity context, List<ScrollHome> cartItems , int num) {
         super(context, R.layout.scroll_row, cartItems);
         this.context = context;
         this.cartItems = cartItems;
+        this.number1 = num;
     }
 
 
@@ -41,10 +43,15 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
         ScrollHome product = cartItems.get(position);
         Picasso.get().load(product.getImage()).into(image);
         name.setText(String.valueOf(product.getName()));
-        price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
+//        price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
+        price.setText("Rs. " + String.valueOf(convertvalue(number1,Integer.parseInt(product.getPrice())))+ ".00");
 
 
         return listViewItem;
+    }
+
+    public int convertvalue(int val1 , int val2){
+        return val1 * val2;
     }
 
 }

@@ -116,7 +116,7 @@ public class ScrollActivity extends AppCompatActivity {
                     Log.e("Product list", " " + scrollHome.getName());
                     products.add(scrollHome);
                 }
-                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products);
+                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products,5);
                 productListView.setAdapter(scrollAdapter);
             }
 
