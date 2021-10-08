@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +29,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
     DatabaseReference dbref;
     List<ShoppingCart> carts;
     ProgressDialog loading;
+    int totalPrice = 0;
+    TextView totPrice;
 
 
     @Override
@@ -36,6 +39,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shopping_cart);
         dbref = FirebaseDatabase.getInstance().getReference("cart");
         cartListView = (ListView) findViewById(R.id.cartListView);
+        totPrice = (TextView) findViewById(R.id.totPrice);
         carts = new ArrayList<>();
         if (LoginActivity.loggedUser == null){
             userID = "temp";
@@ -53,7 +57,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                totalPrice = 0;
                 //clearing the previous cart item list
                 carts.clear();
 
@@ -62,14 +66,15 @@ public class ShoppingCartActivity extends AppCompatActivity {
                     //getting cart item
                     ShoppingCart shoppingCart = postSnapshot.getValue(ShoppingCart.class);
                     //adding cart item to the list
-                    Log.e("Cart item list", " " + shoppingCart.getItemName());
                     if(shoppingCart.getUserId().equals(userID)) {
                         carts.add(shoppingCart);
+                        totalPrice = totalPrice + Integer.parseInt(shoppingCart.getPricePerItem());
                     }
                 }
                 CartListAdapter cartListAdapter = new CartListAdapter(ShoppingCartActivity.this, carts);
                 cartListView.setAdapter(cartListAdapter);
                 loading.dismiss();
+                totPrice.setText("Rs "+ String.valueOf(totalPrice)+ ".00");
             }
 
             @Override
@@ -80,13 +85,3 @@ public class ShoppingCartActivity extends AppCompatActivity {
     }
 }
 
-
-
-
-//        if (LoginActivity.loggedUser == null){
-//            user = "null";
-//        }
-//        else {
-//            user = LoginActivity.loggedUser;
-//        }
-//        Log.e("Logged User", user);
