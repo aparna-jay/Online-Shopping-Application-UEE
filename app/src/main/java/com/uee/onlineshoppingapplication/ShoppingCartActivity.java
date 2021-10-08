@@ -24,6 +24,7 @@ import java.util.List;
 public class ShoppingCartActivity extends AppCompatActivity {
     ListView cartListView;
     String user;
+    String userID;
     DatabaseReference dbref;
     List<ShoppingCart> carts;
     ProgressDialog loading;
@@ -36,6 +37,12 @@ public class ShoppingCartActivity extends AppCompatActivity {
         dbref = FirebaseDatabase.getInstance().getReference("cart");
         cartListView = (ListView) findViewById(R.id.cartListView);
         carts = new ArrayList<>();
+        if (LoginActivity.loggedUser == null){
+            userID = "temp";
+        }
+        else {
+            userID = LoginActivity.loggedUser;
+        }
     }
 
     @Override
@@ -56,7 +63,9 @@ public class ShoppingCartActivity extends AppCompatActivity {
                     ShoppingCart shoppingCart = postSnapshot.getValue(ShoppingCart.class);
                     //adding cart item to the list
                     Log.e("Cart item list", " " + shoppingCart.getItemName());
-                    carts.add(shoppingCart);
+                    if(shoppingCart.getUserId().equals(userID)) {
+                        carts.add(shoppingCart);
+                    }
                 }
                 CartListAdapter cartListAdapter = new CartListAdapter(ShoppingCartActivity.this, carts);
                 cartListView.setAdapter(cartListAdapter);
