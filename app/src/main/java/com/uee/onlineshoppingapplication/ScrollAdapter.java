@@ -50,6 +50,10 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
             @Override
             public void onClick(View view) {
              Intent intent = new Intent(context, ProductProfileActivity.class);
+             intent.putExtra("EXTRA_NAME", String.valueOf(product.getName()));
+             intent.putExtra("EXTRA_PRICE", String.valueOf(product.getPrice()));
+             intent.putExtra("EXTRA_IMAGE", String.valueOf(product.getImage()));
+             intent.putExtra("EXTRA_DESCRIPTION", String.valueOf(product.getDescription()));
              context.startActivity(intent);
             }
         });
