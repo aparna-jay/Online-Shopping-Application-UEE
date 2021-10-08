@@ -3,4 +3,17 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="autoCompleteTextView5">USD</string>
+    <string name="username_register">Enter Name</string>
+    <string name="email_register">Enter Email</string>
+    <string name="address_register">Enter Address</string>
+    <string name="phone_register">Enter Phone</string>
+    <string name="password_register">Enter Password</string>
+    <string name="signup_titile_register">Sign Up</string>
+    <string name="register_button">Register</string>
+    <string name="name_profile">Name</string>
+    <string name="email_profile">E-mail</string>
+    <string name="address_profile">Address</string>
+    <string name="phone_profile">Phone</string>
+    <string name="password_profile">Password</string>
+    <string name="logout_profile">Log out</string>
 </resources>
