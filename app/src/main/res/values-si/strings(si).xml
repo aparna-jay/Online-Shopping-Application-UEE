@@ -4,4 +4,17 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="autoCompleteTextView5">USD</string>
+    <string name="username_register">නම</string>
+    <string name="email_register">ඊ-තැපැල් ලිපිනය</string>
+    <string name="address_register">ලිපිනය</string>
+    <string name="phone_register">දුරකතන අංකය</string>
+    <string name="password_register">මුරපදය</string>
+    <string name="signup_titile_register">ඔබේ ගිණුම සාදන්න</string>
+    <string name="register_button">ගිණුම සාදන්න</string>
+    <string name="name_profile">නම</string>
+    <string name="email_profile">ඊ-තැපැල් ලිපිනය</string>
+    <string name="address_profile">ලිපිනය</string>
+    <string name="phone_profile">දුරකතන අංකය</string>
+    <string name="password_profile">මුරපදය</string>
+    <string name="logout_profile">ඉවත් වන්න</string>
 </resources>

@@ -25,7 +25,7 @@
         android:id="@+id/logout"
         android:layout_width="129dp"
         android:layout_height="45dp"
-        android:text="Log out"
+        android:text="@string/logout_profile"
         app:backgroundTint="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +69,10 @@
         app:layout_constraintVertical_bias="0.237" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/email1"
         android:layout_width="143dp"
         android:layout_height="26dp"
-        android:text="E-mail"
+        android:text="@string/email_profile"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -102,10 +102,10 @@
         app:layout_constraintVertical_bias="0.64" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/name1"
         android:layout_width="143dp"
         android:layout_height="26dp"
-        android:text="Name"
+        android:text="@string/name_profile"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -152,10 +152,10 @@
         app:layout_constraintVertical_bias="0.352" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/address1"
         android:layout_width="143dp"
         android:layout_height="26dp"
-        android:text="Address"
+        android:text="@string/address_profile"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -167,10 +167,10 @@
         app:layout_constraintVertical_bias="0.422" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/password1"
         android:layout_width="143dp"
         android:layout_height="26dp"
-        android:text="Password"
+        android:text="@string/password_profile"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"
@@ -182,10 +182,10 @@
         app:layout_constraintVertical_bias="0.701" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/phone1"
         android:layout_width="143dp"
         android:layout_height="26dp"
-        android:text="Phone"
+        android:text="@string/phone_profile"
         android:textColor="@color/black"
         android:textSize="19sp"
         android:textStyle="bold"

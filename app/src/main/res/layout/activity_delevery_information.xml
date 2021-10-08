@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.577" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/signUpTitle"
         android:layout_width="320dp"
         android:layout_height="52dp"
         android:text="Enter Delivery Information"
