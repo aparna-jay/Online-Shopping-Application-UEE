@@ -1,7 +1,6 @@
 package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 
 
@@ -23,7 +21,6 @@ public class SelectPaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_payment);
-
 
         RadioButton radioYes = (RadioButton)findViewById(R.id.radio_pirates);
         RadioButton radioNo = (RadioButton)findViewById(R.id.radio_ninjas);
@@ -52,9 +49,5 @@ public class SelectPaymentActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
-
 }
