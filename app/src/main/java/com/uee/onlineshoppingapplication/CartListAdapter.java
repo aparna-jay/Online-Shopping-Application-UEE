@@ -55,6 +55,14 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
             public void onClick(View view) {
                 totalQuantity = Integer.parseInt(String.valueOf(cart.getQuantity()));
                 totalQuantity = totalQuantity + 1;
+                if(totalQuantity <= 0) {
+                    quantity.setText("1");
+                    totalQuantity = 1;
+                }
+                else{
+                    quantity.setText(String.valueOf(totalQuantity));
+                }
+
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
@@ -66,6 +74,13 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
             public void onClick(View view) {
                 totalQuantity = Integer.parseInt(String.valueOf(cart.getQuantity()));
                 totalQuantity = totalQuantity - 1;
+                if(totalQuantity <= 0) {
+                    quantity.setText("1");
+                    totalQuantity = 1;
+                }
+                else{
+                    quantity.setText(String.valueOf(totalQuantity));
+                }
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
