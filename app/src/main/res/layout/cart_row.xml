@@ -4,6 +4,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        >
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +41,7 @@
             android:id="@+id/minus"
             android:layout_width="20dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="48dp"
             android:layout_marginTop="25dp"
             android:background="@null"
             android:scaleType="fitCenter"
@@ -60,17 +70,18 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/plus"
                  />
+
+    </LinearLayout>
         <ImageButton
             android:id="@+id/remove"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginLeft="348dp"
+            android:layout_marginTop="110dp"
             android:layout_weight="1"
             android:src="@drawable/delete"
             />
-    </LinearLayout>
-
+    </androidx.cardview.widget.CardView>
 </androidx.core.widget.NestedScrollView>
