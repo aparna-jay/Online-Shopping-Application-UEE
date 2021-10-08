@@ -9,4 +9,10 @@
         <item>Master</item>
         <item>Debit-card</item>
     </string-array>
+
+
+    <string-array name="Currancy">
+        <item>Rs</item>
+        <item>USD</item>
+    </string-array>
 </resources>
