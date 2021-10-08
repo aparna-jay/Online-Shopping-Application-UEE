@@ -22,4 +22,9 @@
     <string name="loginbutton_login">Login</string>
     <string name="signupbutton_login">Sign Up</string>
     <string name="donthave_login">Don\'t Have an Account ?</string>
+    <string name="name1_delivery">Name</string>
+    <string name="adress1_delivery">Delivery Address</string>
+    <string name="phone_delivery">Contact Number</string>
+    <string name="nextbutton_delivery">Next</string>
+    <string name="title_delivery">Enter Delivery Informations</string>
 </resources>

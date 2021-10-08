@@ -22,4 +22,9 @@
     <string name="loginbutton_login">ඇතුල් වන්න</string>
     <string name="signupbutton_login">ලියාපදිංචි කිරීම</string>
     <string name="donthave_login">ගිණුමක් නැද්ද ?</string>
+    <string name="name1_delivery">නම</string>
+    <string name="adress1_delivery">බෙදා හැරීමේ ලිපිනය</string>
+    <string name="phone_delivery">දුරකතන අංකය</string>
+    <string name="nextbutton_delivery">ඊළඟ</string>
+    <string name="title_delivery">Enter Delivery Informations</string>
 </resources>
