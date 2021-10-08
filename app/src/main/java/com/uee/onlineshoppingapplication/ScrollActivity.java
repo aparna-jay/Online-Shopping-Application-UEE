@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,11 +20,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.view.View;
 import com.squareup.picasso.Picasso;
 import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.ScrollHome;
 import com.uee.onlineshoppingapplication.OnlineDB.ShoppingCart;
+import com.uee.onlineshoppingapplication.OnlineDB.currencySetter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,14 +38,16 @@ public class ScrollActivity extends AppCompatActivity {
 //    ImageView Image5;
 //    ImageView Image6;
     private FirebaseUser fUser;
-    Spinner languageSpinner;
+    Spinner languageSpinner ,currancySpinner;
     String Text;
     TextView txtLogo;
     ListView productListView;
     String user ;
     DatabaseReference dbref;
     List<ScrollHome> products;
-
+    String text;
+//    int valueMult ;
+float number1;
 
 
     @Override
@@ -71,9 +75,42 @@ public class ScrollActivity extends AppCompatActivity {
 //        Image3=(ImageView)findViewById(R.id.img3);
 //        Image4=(ImageView)findViewById(R.id.img4);
 //        Image5=(ImageView)findViewById(R.id.img5);
-//        Image6=(ImageView)findViewById(R.id.img6);
+//        Image6=(ImageView)findViewById(R.id.img6);d
         txtLogo=(TextView)findViewById(R.id.txtLogo);
         languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
+
+
+
+//        currancy
+        // Spinner Drop down elements
+        List<String> curancy = new ArrayList<String>();
+        curancy.add("Rs");
+        curancy.add("USD");
+
+        currancySpinner = (Spinner) findViewById(R.id.languageSpinner2);
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(getApplicationContext() , R.layout.currancy_spinnner, curancy);
+        adapter.setDropDownViewResource(R.layout.currancy_layout_drop_down);
+        currancySpinner.setAdapter(adapter);
+        currancySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                text = parent.getItemAtPosition(position).toString();
+                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+                currencySetter.setC_type(text);
+                currencySetter.changeCurrency(text);
+                number1 = currencySetter.getValue();
+
+                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products,number1,text);
+                productListView.setAdapter(scrollAdapter);
+//                finish();
+//                startActivity(getIntent());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
 //        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/frock.png?alt=media&token=aed6d16f-9739-40a8-ba0b-51e6a3576b35").into(Image1);
 //        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/image-retrieve-33687.appspot.com/o/images%2Fcam1.jpeg?alt=media&token=ed6db825-e481-49d1-a7ff-8d9047ec59c2").into(Image2);
@@ -88,8 +125,6 @@ public class ScrollActivity extends AppCompatActivity {
         languages.add("English");
         languages.add("සිංහල");
         languages.add("தமிழ்");
-
-
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(getApplicationContext(), R.layout.language_spinner_item, languages);
@@ -130,7 +165,8 @@ public class ScrollActivity extends AppCompatActivity {
                     Log.e("Product list", " " + scrollHome.getName());
                     products.add(scrollHome);
                 }
-                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products);
+                number1 = currencySetter.getValue();
+                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products , number1,text);
                 productListView.setAdapter(scrollAdapter);
             }
 

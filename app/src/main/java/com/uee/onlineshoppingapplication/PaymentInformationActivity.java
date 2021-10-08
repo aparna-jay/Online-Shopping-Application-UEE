@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,11 +16,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.uee.onlineshoppingapplication.OnlineDB.paymentinfo;
 
-public class PaymentInformationActivity extends AppCompatActivity {
+public class PaymentInformationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView nametext, expdatetext, cTypetext,CardNumber,CVVtext;
+    TextView nametext, expdatetext,CardNumber,CVVtext;
+    Spinner cTypetext;
     Button btnPay;
     DatabaseReference databaseUsers;
+    String  text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,16 @@ public class PaymentInformationActivity extends AppCompatActivity {
 
         nametext = (TextView) findViewById(R.id.tbName);
         expdatetext = (TextView) findViewById(R.id.tbEXPDate);
-        cTypetext = (TextView) findViewById(R.id.tbCardType);
+//        cTypetext = (TextView) findViewById(R.id.tbCardType);
         CardNumber = (TextView) findViewById(R.id.tbccNumber);
         CVVtext = (TextView) findViewById(R.id.tbCVV);
         btnPay = (Button) findViewById(R.id.btnpay);
+
+        Spinner spinner = findViewById(R.id.tbCardType);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.card_types, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +62,7 @@ public class PaymentInformationActivity extends AppCompatActivity {
         //getting the values to save
         String name = nametext.getText().toString().trim();
         String expdate = expdatetext.getText().toString().trim();
-        String ctype = cTypetext.getText().toString().trim();
+        String ctype = text.trim();
         String cnumber = CardNumber.getText().toString().trim();
         String cvv = CVVtext.getText().toString().trim();
 
@@ -73,8 +84,8 @@ public class PaymentInformationActivity extends AppCompatActivity {
             //setting edittext to blank again
             nametext.setText("");
             expdatetext.setText("");
-            cTypetext.setText("");
-
+            CardNumber.setText("");
+            CVVtext.setText("");
 
             //displaying a success toast
             Toast.makeText(this, "payment information added", Toast.LENGTH_LONG).show();
@@ -85,6 +96,15 @@ public class PaymentInformationActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+         text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
 
+    }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
