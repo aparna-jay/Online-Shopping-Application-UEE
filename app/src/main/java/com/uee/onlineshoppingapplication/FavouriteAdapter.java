@@ -1,6 +1,8 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,7 +26,7 @@ public class FavouriteAdapter extends ArrayAdapter<Favourites> {
     private Activity context;
     List<Favourites> favItems;
     DatabaseReference Reference;
-    Button favBtn;
+    Button favDelete;
     String user;
 
     public FavouriteAdapter(Activity context, List<Favourites> favItems) {
@@ -39,28 +42,26 @@ public class FavouriteAdapter extends ArrayAdapter<Favourites> {
 
         ImageView image = (ImageView) listViewItem.findViewById(R.id.imageV);
         TextView price = (TextView) listViewItem.findViewById(R.id.price1);
-        favBtn = (Button) listViewItem.findViewById(R.id.imageButton);
+        favDelete = (Button)  listViewItem.findViewById(R.id.delButtonstr);
 
         Favourites favr = favItems.get(position);
         Picasso.get().load(favr.getImage()).into(image);
-        price.setText(String.valueOf(favr.getPrice()));
-//        price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
+        price.setText("Rs. " + String.valueOf(favr.getPrice())+ ".00");
 
 
-//        favBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //getting a unique id using push().getKey() method
-//                String id = Reference.push().getKey();;
-//
-//                //creating an Object
-//                Favourites fav = new Favourites(id, product.getPrice(), product.getImage(), user);
-//
-//                //Saving
-//                Reference.child(id).setValue(fav);
-//
-//            }
-//        });
+        favDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Reference = FirebaseDatabase.getInstance().getReference();
+//              Reference.removeValue();
+                Reference.child("favourites").child(favr.getId()).removeValue();
+
+                Toast.makeText(context.getApplicationContext(), "Successfully Deleted From Favourites!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
         return listViewItem;
     }

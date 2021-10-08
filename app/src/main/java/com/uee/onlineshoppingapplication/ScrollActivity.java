@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,18 +32,13 @@ import java.util.List;
 
 public class ScrollActivity extends AppCompatActivity {
 
-//    ImageView Image1;
-//    ImageView Image2;
-//    ImageView Image3;
-//    ImageView Image4;
-//    ImageView Image5;
-//    ImageView Image6;
     private FirebaseUser fUser;
     Spinner languageSpinner ,currancySpinner;
     String Text;
     TextView txtLogo;
     ListView productListView;
     String user ;
+    String userID;
     DatabaseReference dbref;
     List<ScrollHome> products;
     String text;
@@ -59,23 +55,17 @@ float number1;
         productListView = (ListView) findViewById(R.id.prListView);
         products = new ArrayList<>();
 
-//        if (LoginActivity.loggedUser == null){
-//            user = "null";
-//        }
-//        else {
-//            user = LoginActivity.loggedUser;
-//        }
+        if (LoginActivity.loggedUser == null){
+            userID = "t";
+        }
+        else {
+            userID = LoginActivity.loggedUser;
+        }
 //        Log.e("Logged User", user);
 //
 //        fUser = FirebaseAuth.getInstance().getCurrentUser();
 //        dbref = FirebaseDatabase.getInstance().getReference("users");
 
-//        Image1=(ImageView)findViewById(R.id.img1);
-//        Image2=(ImageView)findViewById(R.id.img2);
-//        Image3=(ImageView)findViewById(R.id.img3);
-//        Image4=(ImageView)findViewById(R.id.img4);
-//        Image5=(ImageView)findViewById(R.id.img5);
-//        Image6=(ImageView)findViewById(R.id.img6);d
         txtLogo=(TextView)findViewById(R.id.txtLogo);
         languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
 
@@ -112,14 +102,7 @@ float number1;
             }
         });
 
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/frock.png?alt=media&token=aed6d16f-9739-40a8-ba0b-51e6a3576b35").into(Image1);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/image-retrieve-33687.appspot.com/o/images%2Fcam1.jpeg?alt=media&token=ed6db825-e481-49d1-a7ff-8d9047ec59c2").into(Image2);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/watch.jpeg?alt=media&token=d0ae14f1-d1ec-40e4-a86a-22d90e8d9bce").into(Image3);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/tshirt.png?alt=media&token=5c105284-bb1d-4df6-b295-e3652d869711").into(Image4);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/shoes2.png?alt=media&token=b2cf57f7-01dd-4940-bff7-c2f5fa3e9a82").into(Image5);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/watch2.jpeg?alt=media&token=9a0753ef-846b-4b43-b76b-9a9625012e3c").into(Image6);
-
-        // Spinner click listene
+  // Spinner click listene
         // Spinner Drop down elements
         List<String> languages = new ArrayList<String>();
         languages.add("English");
@@ -159,15 +142,20 @@ float number1;
 
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //getting cart item
+                    //getting product item
                     ScrollHome scrollHome = postSnapshot.getValue(ScrollHome.class);
-                    //adding cart item to the list
-                    Log.e("Product list", " " + scrollHome.getName());
-                    products.add(scrollHome);
+                    //adding product item to the favourite list
+//                    if(scrollHome.getUserId().equals(userID)) {
+                        Log.e("Product list", " " + scrollHome.getName());
+                        products.add(scrollHome);
+
+
                 }
+
                 number1 = currencySetter.getValue();
                 ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products , number1,text);
                 productListView.setAdapter(scrollAdapter);
+//                Toast.makeText(getApplicationContext(), "Added to the Favourites!", Toast.LENGTH_SHORT).show();
             }
 
             @Override

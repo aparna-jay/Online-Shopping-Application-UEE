@@ -9,8 +9,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        android:layout_marginTop="15dp">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="15dp"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +67,7 @@
                             android:text="Add to cart"
                             android:backgroundTint="#0E90FF"/>
                         <Button
-                            android:id="@+id/imageButtonstr"
+                            android:id="@+id/delButtonstr"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginLeft="35dp"
