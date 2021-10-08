@@ -79,17 +79,26 @@
                                 android:columnOrderPreserved="false"
                                 android:rowCount="2">
 
-                                <SearchView
+<!--                                <SearchView-->
+<!--                                    android:id="@+id/search"-->
+<!--                                    android:layout_width="380dp"-->
+<!--                                    android:layout_height="35dp"-->
+<!--                                    android:background="#2F829297"-->
+<!--                                    android:visibility="visible"-->
+<!--                                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                                    app:layout_constraintVertical_bias="0.05" />-->
+
+                                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                                     android:id="@+id/search"
-                                    android:layout_width="380dp"
-                                    android:layout_height="35dp"
-                                    android:background="#2F829297"
-                                    android:visibility="visible"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.05" />
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:backgroundTint="@color/white"
+                                    android:drawableRight="@drawable/ic_baseline_search_24">
+
+                                </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
 
                             </GridLayout>
 
