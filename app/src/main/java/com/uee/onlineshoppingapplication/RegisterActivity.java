@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone = (TextView) findViewById(R.id.phone);
         password = (TextView) findViewById(R.id.password);
         addUser = (Button) findViewById(R.id.addUser);
-        signUpTitle = (TextView) findViewById(R.id.signUpTitle);
+        signUpTitle = (TextView) findViewById(R.id.title_delivery);
 
         users = new ArrayList<>();
 
