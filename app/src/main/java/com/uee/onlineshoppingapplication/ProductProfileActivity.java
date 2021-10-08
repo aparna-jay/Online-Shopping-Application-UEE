@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +26,10 @@ public class ProductProfileActivity extends AppCompatActivity {
     DatabaseReference databaseCarts;
     Button addToCart;
     String userID = "temp";
-    String itemName, itemPrice, itemQuantity, image, itemDescription;
+    String itemName, itemPrice, image, itemDescription;
     ImageView imageView;
+    ImageButton plus, minus;
+    int totalQuantity = 1;
 
 
     @Override
@@ -39,7 +42,6 @@ public class ProductProfileActivity extends AppCompatActivity {
         if (extras != null) {
             itemName = extras.getString("EXTRA_NAME");
             itemPrice = extras.getString("EXTRA_PRICE");
-            itemQuantity = extras.getString("EXTRA_QUANTITY");
             image = extras.getString("EXTRA_IMAGE");
             itemDescription = extras.getString("EXTRA_DESCRIPTION");
         }
@@ -51,6 +53,8 @@ public class ProductProfileActivity extends AppCompatActivity {
         description = (TextView) findViewById(R.id.description);
         addToCart = (Button) findViewById(R.id.addToCart);
         imageView = (ImageView) findViewById(R.id.imageView);
+        plus = (ImageButton) findViewById(R.id.plus);
+        minus = (ImageButton) findViewById(R.id.minus);
 
         name.setText(itemName);
         price.setText("Rs " + itemPrice + ".00");
@@ -61,6 +65,20 @@ public class ProductProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addToCart();
+            }
+        });
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalQuantity = totalQuantity + 1;
+                quantity.setText(String.valueOf(totalQuantity));
+            }
+        });
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalQuantity = totalQuantity - 1;
+                quantity.setText(String.valueOf(totalQuantity));
             }
         });
     }
@@ -78,7 +96,7 @@ public class ProductProfileActivity extends AppCompatActivity {
         String id = databaseCarts.push().getKey();
         int totalPrice = Integer.parseInt(itemPrice) * Integer.parseInt(itemQuantity);
         //creating a cart Object
-        ShoppingCart shoppingCart = new ShoppingCart(id, userID, image, itemName, itemPrice, itemQuantity, String.valueOf(totalPrice));
+        ShoppingCart shoppingCart = new ShoppingCart(id, userID, image, itemName, itemPrice, String.valueOf(totalQuantity), String.valueOf(totalPrice));
 
         //Saving the cart item
         databaseCarts.child(id).setValue(shoppingCart);
@@ -88,4 +106,6 @@ public class ProductProfileActivity extends AppCompatActivity {
         Intent intent = new Intent(ProductProfileActivity.this, ScrollActivity.class);
         startActivity(intent);
     }
+
+
 }
