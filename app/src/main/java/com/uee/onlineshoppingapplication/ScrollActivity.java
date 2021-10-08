@@ -87,7 +87,7 @@ float number1;
                 currencySetter.changeCurrency(text);
                 number1 = currencySetter.getValue();
 
-                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products,number1);
+                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products,number1,text);
                 productListView.setAdapter(scrollAdapter);
 //                finish();
 //                startActivity(getIntent());
@@ -154,7 +154,7 @@ float number1;
                     products.add(scrollHome);
                 }
                 number1 = currencySetter.getValue();
-                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products , number1);
+                ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products , number1,text);
                 productListView.setAdapter(scrollAdapter);
             }
 
