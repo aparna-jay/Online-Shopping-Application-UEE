@@ -77,17 +77,26 @@ float number1;
 
         dbref.addListenerForSingleValueEvent(event);
 
-
-        if (LoginActivity.loggedUser == null){
-            userID = "t";
-        }
-        else {
-            userID = LoginActivity.loggedUser;
-        }
+//        if (LoginActivity.loggedUser == null){
+//            user = "null";
+//        }
+//        else {
+//            user = LoginActivity.loggedUser;
+//        }
 //        Log.e("Logged User", user);
 //
 //        fUser = FirebaseAuth.getInstance().getCurrentUser();
 //        dbref = FirebaseDatabase.getInstance().getReference("users");
+
+//        if (LoginActivity.loggedUser == null){
+//            userID = "t";
+//        }
+//        else {
+//            userID = LoginActivity.loggedUser;
+//        }
+//        Log.e("Logged User", user);
+//
+
 
         txtLogo=(TextView)findViewById(R.id.txtLogo);
         languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
