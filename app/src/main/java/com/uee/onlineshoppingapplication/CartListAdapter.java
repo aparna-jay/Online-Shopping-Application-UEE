@@ -1,6 +1,8 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,8 +75,25 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteReference = FirebaseDatabase.getInstance().getReference();
-                deleteReference.child("cart").child(cart.getId()).removeValue();
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(R.string.app_name);
+                builder.setMessage("Do you want to delete this item from cart ?");
+                builder.setIcon(R.drawable.lehesi);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        deleteReference = FirebaseDatabase.getInstance().getReference();
+                        deleteReference.child("cart").child(cart.getId()).removeValue();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
         });
         return listViewItem;
