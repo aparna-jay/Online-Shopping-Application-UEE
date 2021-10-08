@@ -1,24 +1,28 @@
 package com.uee.onlineshoppingapplication.OnlineDB;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
-public class ScrollHome {
+public class Favourites {
     public String id;
-    public String name;
     public String price;
     public String image;
     public String userId;
 
-    public ScrollHome(){
 
-    }
+    public Favourites(String id, String price, String image, String userId) {
 
-    public ScrollHome(String id, String name, String price, String image, String userId) {
         this.id = id;
-        this.name = name;
         this.price = price;
         this.image = image;
         this.userId = userId;
+    }
+
+    public Favourites() {
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public void setUserId(String userId) {
@@ -31,14 +35,6 @@ public class ScrollHome {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPrice() {
@@ -56,5 +52,4 @@ public class ScrollHome {
     public void setImage(String image) {
         this.image = image;
     }
-
 }
