@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.paymentinfo;
 
 public class PaymentInformationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -23,6 +24,7 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
     Button btnPay;
     DatabaseReference databaseUsers;
     String  text;
+    TextView name_payment,cardtype_payment,ccnumber_payment,exp_payment,cvv_payment,title_payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,21 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
 //        cTypetext = (TextView) findViewById(R.id.tbCardType);
         CardNumber = (TextView) findViewById(R.id.tbccNumber);
         CVVtext = (TextView) findViewById(R.id.tbCVV);
+        name_payment = (TextView) findViewById(R.id.name_payment);
+        cardtype_payment = (TextView) findViewById(R.id.cardtype_payment);
+        ccnumber_payment = (TextView) findViewById(R.id.ccnumber_payment);
+        exp_payment = (TextView) findViewById(R.id.exp_payment);
+        cvv_payment = (TextView) findViewById(R.id.cvv_payment);
+        title_payment = (TextView) findViewById(R.id.title_payment);
         btnPay = (Button) findViewById(R.id.btnpay);
+
+        name_payment.setText(LanguageSetter.getresources().getString(R.string.name_payment));
+        cardtype_payment.setText(LanguageSetter.getresources().getString(R.string.cardtype_payment));
+        ccnumber_payment.setText(LanguageSetter.getresources().getString(R.string.ccnumber_payment));
+        exp_payment.setText(LanguageSetter.getresources().getString(R.string.exp_payment));
+        cvv_payment.setText(LanguageSetter.getresources().getString(R.string.cvv_payment));
+        title_payment.setText(LanguageSetter.getresources().getString(R.string.title_payment));
+        btnPay.setText(LanguageSetter.getresources().getString(R.string.paybutton_payment));
 
         Spinner spinner = findViewById(R.id.tbCardType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.card_types, android.R.layout.simple_spinner_item);

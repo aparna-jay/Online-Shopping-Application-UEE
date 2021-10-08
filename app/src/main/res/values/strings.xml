@@ -26,6 +26,13 @@
     <string name="phone_delivery">Contact Number</string>
     <string name="nextbutton_delivery">Next</string>
     <string name="title_delivery">Enter Delivery Informations</string>
+    <string name="name_payment">Card Holder Name</string>
+    <string name="cardtype_payment">Card Type</string>
+    <string name="ccnumber_payment">CC Number</string>
+    <string name="cvv_payment">CVV</string>
+    <string name="exp_payment">EXP</string>
+    <string name="title_payment">Enter Payment Information</string>
+    <string name="paybutton_payment">PAY</string>
 
     <string-array name="card_types">
         <item>Visa</item>
