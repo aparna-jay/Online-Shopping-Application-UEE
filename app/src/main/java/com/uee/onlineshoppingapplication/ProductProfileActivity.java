@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -52,7 +53,7 @@ public class ProductProfileActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageView);
 
         name.setText(itemName);
-        price.setText(itemPrice);
+        price.setText("Rs " + itemPrice + ".00");
         description.setText(itemDescription);
         Picasso.get().load(image).into(imageView);
 
@@ -70,22 +71,21 @@ public class ProductProfileActivity extends AppCompatActivity {
      * */
     private void addToCart() {
         //getting the values to save
-        String itemName = name.getText().toString().trim();
-        String itemPrice = price.getText().toString().trim();
         String itemQuantity = quantity.getText().toString().trim();
 
         //getting a unique id using push().getKey() method
         //it will create a unique id and we will use it as the Primary Key for cart item
         String id = databaseCarts.push().getKey();
         int totalPrice = Integer.parseInt(itemPrice) * Integer.parseInt(itemQuantity);
-
         //creating a cart Object
-        ShoppingCart shoppingCart = new ShoppingCart(id, userID, "abcdefg", itemName, itemPrice, itemQuantity, String.valueOf(totalPrice));
+        ShoppingCart shoppingCart = new ShoppingCart(id, userID, image, itemName, itemPrice, itemQuantity, String.valueOf(totalPrice));
 
         //Saving the cart item
         databaseCarts.child(id).setValue(shoppingCart);
 
         //displaying a success toast
         Toast.makeText(this, "Item added to cart", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(ProductProfileActivity.this, ScrollActivity.class);
+        startActivity(intent);
     }
 }
