@@ -15,12 +15,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 
 public class LoginActivity extends AppCompatActivity {
 
     Button createAccount, login;
     EditText email, password;
-    TextView tvSignUp;
+    TextView tvSignUp, DontHave;
     DatabaseReference databaseUsers;
     public static String loggedUser;
     public String savedInstanceState;
@@ -31,8 +32,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);//Initialize.
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        DontHave = findViewById(R.id.phone_delivery);
         createAccount = findViewById(R.id.signUp);
         login = findViewById(R.id.login);
+
+        DontHave.setText(LanguageSetter.getresources().getString(R.string.donthave_login));
+        email.setHint(LanguageSetter.getresources().getString(R.string.email_login));
+        password.setHint(LanguageSetter.getresources().getString(R.string.password_login));
+        login.setText(LanguageSetter.getresources().getString(R.string.loginbutton_login));
+        createAccount.setText(LanguageSetter.getresources().getString(R.string.signupbutton_login));
 
         Intent intent = new Intent(LoginActivity.this, SplashScreenActivity.class);
         startActivity(intent);

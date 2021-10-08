@@ -17,4 +17,9 @@
     <string name="phone_profile">Phone</string>
     <string name="password_profile">Password</string>
     <string name="logout_profile">Log out</string>
+    <string name="email_login">Enter Email</string>
+    <string name="password_login">Enter Password</string>
+    <string name="loginbutton_login">Login</string>
+    <string name="signupbutton_login">Sign Up</string>
+    <string name="donthave_login">Don\'t Have an Account ?</string>
 </resources>

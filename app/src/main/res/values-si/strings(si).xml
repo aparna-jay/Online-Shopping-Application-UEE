@@ -17,4 +17,9 @@
     <string name="phone_profile">දුරකතන අංකය</string>
     <string name="password_profile">මුරපදය</string>
     <string name="logout_profile">ඉවත් වන්න</string>
+    <string name="email_login">ඊ-තැපැල් ලිපිනය</string>
+    <string name="password_login">මුරපදය</string>
+    <string name="loginbutton_login">ඇතුල් වන්න</string>
+    <string name="signupbutton_login">ලියාපදිංචි කිරීම</string>
+    <string name="donthave_login">ගිණුමක් නැද්ද ?</string>
 </resources>
