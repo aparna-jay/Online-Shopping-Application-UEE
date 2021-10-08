@@ -182,7 +182,7 @@
         app:layout_constraintVertical_bias="0.701" />
 
     <TextView
-        android:id="@+id/phone1"
+        android:id="@+id/cvv_payment"
         android:layout_width="143dp"
         android:layout_height="26dp"
         android:text="@string/phone_profile"

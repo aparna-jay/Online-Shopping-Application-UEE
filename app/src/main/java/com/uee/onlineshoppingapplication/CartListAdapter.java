@@ -1,6 +1,8 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +24,7 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
     List<ShoppingCart> cartItems;
     int totalQuantity;
     ImageButton plus, minus,delete;
-    DatabaseReference updateReference;
+    DatabaseReference updateReference, deleteReference;
 
     public CartListAdapter(Activity context, List<ShoppingCart> cartItems) {
         super(context, R.layout.cart_row, cartItems);
@@ -53,6 +55,14 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
             public void onClick(View view) {
                 totalQuantity = Integer.parseInt(String.valueOf(cart.getQuantity()));
                 totalQuantity = totalQuantity + 1;
+                if(totalQuantity <= 0) {
+                    quantity.setText("1");
+                    totalQuantity = 1;
+                }
+                else{
+                    quantity.setText(String.valueOf(totalQuantity));
+                }
+
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
@@ -64,10 +74,41 @@ public class CartListAdapter extends ArrayAdapter<ShoppingCart>{
             public void onClick(View view) {
                 totalQuantity = Integer.parseInt(String.valueOf(cart.getQuantity()));
                 totalQuantity = totalQuantity - 1;
+                if(totalQuantity <= 0) {
+                    quantity.setText("1");
+                    totalQuantity = 1;
+                }
+                else{
+                    quantity.setText(String.valueOf(totalQuantity));
+                }
                 int totPrice = getPricePerItem(totalQuantity, Integer.parseInt(cart.getUnitPrice()));
                 updateReference = FirebaseDatabase.getInstance().getReference();
                 updateReference.child("cart").child(cart.getId()).child("quantity").setValue(String.valueOf(totalQuantity));
                 updateReference.child("cart").child(cart.getId()).child("pricePerItem").setValue(String.valueOf(totPrice));
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(R.string.app_name);
+                builder.setMessage("Do you want to delete this item from cart ?");
+                builder.setIcon(R.drawable.lehesi);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        deleteReference = FirebaseDatabase.getInstance().getReference();
+                        deleteReference.child("cart").child(cart.getId()).removeValue();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
         });
         return listViewItem;

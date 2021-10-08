@@ -33,7 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         name1 = (TextView) findViewById(R.id.name1);
         email1 = (TextView) findViewById(R.id.email1);
         address1 = (TextView) findViewById(R.id.address1);
-        phone1 = (TextView) findViewById(R.id.phone1);
+        phone1 = (TextView) findViewById(R.id.cvv_payment);
         password1 = (TextView) findViewById(R.id.password1);
 
 //        ImageButton back = (ImageButton) findViewById(R.id.back);

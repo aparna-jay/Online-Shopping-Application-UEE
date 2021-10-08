@@ -17,4 +17,25 @@
     <string name="phone_profile">දුරකතන අංකය</string>
     <string name="password_profile">මුරපදය</string>
     <string name="logout_profile">ඉවත් වන්න</string>
+    <string name="email_login">ඊ-තැපැල් ලිපිනය</string>
+    <string name="password_login">මුරපදය</string>
+    <string name="loginbutton_login">ඇතුල් වන්න</string>
+    <string name="signupbutton_login">ලියාපදිංචි කිරීම</string>
+    <string name="donthave_login">ගිණුමක් නැද්ද ?</string>
+    <string name="name1_delivery">නම</string>
+    <string name="adress1_delivery">බෙදා හැරීමේ ලිපිනය</string>
+    <string name="phone_delivery">දුරකතන අංකය</string>
+    <string name="nextbutton_delivery">ඊළඟ</string>
+    <string name="title_delivery">බෙදා හැරීමේ තොරතුරු ඇතුළත් කරන්න</string>
+    <string name="name_payment">කාඩ්පත් හිමියාගේ නම</string>
+    <string name="cardtype_payment">කාඩ් වර්ගය</string>
+    <string name="ccnumber_payment">ණයවර පත් අංකය</string>
+    <string name="cvv_payment">cvv ආරක්ෂක කේතය</string>
+    <string name="exp_payment">කල් ඉකුත් වීමේ දිනය</string>
+    <string name="title_payment">ගෙවීම් තොරතුරු ඇතුළත් කරන්න</string>
+    <string name="paybutton_payment">ගෙවන්න</string>
+    <string name="title_selectp">ඔබේ ගෙවීමේ ක්‍රමය තෝරන්න</string>
+    <string name="cardpayment_selectp">කාඩ් ගෙවීම</string>
+    <string name="cashondelivery_selectp">මුදල් මත බෙදා හැරීම</string>
+    <string name="next_selectp">ඊළඟ</string>
 </resources>

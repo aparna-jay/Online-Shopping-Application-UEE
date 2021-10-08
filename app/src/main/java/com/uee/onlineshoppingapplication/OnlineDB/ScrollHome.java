@@ -7,17 +7,19 @@ public class ScrollHome {
     public String name;
     public String price;
     public String image;
+    public String description;
     public String userId;
 
     public ScrollHome(){
 
     }
 
-    public ScrollHome(String id, String name, String price, String image, String userId) {
+    public ScrollHome(String id, String name, String price, String image, String description, String userId) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.image = image;
+        this.description = description;
         this.userId = userId;
     }
 
@@ -57,4 +59,11 @@ public class ScrollHome {
         this.image = image;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

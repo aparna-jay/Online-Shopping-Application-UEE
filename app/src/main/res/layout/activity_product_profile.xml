@@ -17,17 +17,15 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.777"
         app:srcCompat="@drawable/formbackground" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="180dp"
-        android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -51,30 +49,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.111" />
 
-    <EditText
-        android:id="@+id/quantity"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
-        android:ems="10"
-        android:hint="Enter quantity"
-        android:inputType="number"
-        android:padding="12dp"
-        android:textColor="@color/black"
-        android:textSize="19sp"
-        android:textStyle="bold"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747" />
+        app:layout_constraintVertical_bias="0.727">
+
+        <ImageButton
+            android:id="@+id/minus"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="18dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/minus" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="18dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+
+        <ImageButton
+            android:id="@+id/plus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="18dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plus" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
         android:padding="12dp"
         android:text="Rs. 5250.00"
         android:textColor="@color/black"
@@ -82,10 +101,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintVertical_bias="0.632" />
 
     <Button
         android:id="@+id/addToCart"
@@ -101,19 +119,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.856" />
 
-    <EditText
-        android:id="@+id/editTextTextPostalAddress"
-        android:layout_width="307dp"
-        android:layout_height="58dp"
-        android:background="@drawable/rounded_corners"
-        android:ems="10"
-        android:inputType="textPostalAddress"
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
         android:text="Quality China Products.  100% cotton"
+        android:textColor="@color/black"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.54" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
