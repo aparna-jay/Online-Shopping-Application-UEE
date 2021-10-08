@@ -1,13 +1,16 @@
 package com.uee.onlineshoppingapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -20,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
@@ -42,6 +46,9 @@ public class ScrollActivity extends AppCompatActivity {
     DatabaseReference dbref;
     List<ScrollHome> products;
     String text;
+    //search
+    private AutoCompleteTextView txtSearch;
+
 //    int valueMult ;
 float number1;
 
@@ -54,6 +61,22 @@ float number1;
         dbref = FirebaseDatabase.getInstance().getReference("products");
         productListView = (ListView) findViewById(R.id.prListView);
         products = new ArrayList<>();
+        txtSearch = (AutoCompleteTextView) findViewById(R.id.search);
+
+        ValueEventListener event = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                populateSearch(snapshot);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+
+        dbref.addListenerForSingleValueEvent(event);
+
 
         if (LoginActivity.loggedUser == null){
             userID = "t";
@@ -125,6 +148,63 @@ float number1;
             }
 
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    //search
+    private void populateSearch(DataSnapshot snapshot) {
+        ArrayList<String> names= new ArrayList<>();
+        if(snapshot.exists()){
+            for (DataSnapshot ds:snapshot.getChildren()){
+                String name = ds.child("name").getValue(String.class);
+                names.add(name);
+            }
+            //set search details
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, names);
+            txtSearch.setAdapter(adapter);
+
+            //get search details
+            txtSearch.setOnClickListener(new AdapterView.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String name = txtSearch.getText().toString();
+                    searchUser(name);
+                }
+
+            });
+        }else {
+            Log.d("products", "No data found!");
+        }
+    }
+
+    //display search details
+    private void searchUser(String name) {
+        Query query = dbref.orderByChild("name").equalTo(name);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    ArrayList<String> listProducts = new ArrayList<>();
+
+                    for (DataSnapshot ds:snapshot.getChildren()){
+                        ScrollHome prdct = new ScrollHome(ds.child("id").getValue(String.class),ds.child("name").getValue(String.class),
+                                ds.child("price").getValue(String.class),ds.child("image").getValue(String.class),
+                                ds.child("description").getValue(String.class), ds.child("userId").getValue(String.class));
+                        listProducts.add(prdct.getName() + "\n"+ prdct.getPrice()+"\n\n");
+                    }
+                    ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_expandable_list_item_1,listProducts);
+                    productListView.setAdapter(adapter);
+
+                }else {
+                    Log.d("products", "No data found!");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
