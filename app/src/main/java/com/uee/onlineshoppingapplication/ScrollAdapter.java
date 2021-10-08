@@ -1,10 +1,12 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,11 +39,20 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
         ImageView image = (ImageView) listViewItem.findViewById(R.id.image);
         TextView name = (TextView) listViewItem.findViewById(R.id.name);
         TextView price = (TextView) listViewItem.findViewById(R.id.price);
+        Button view  =(Button) listViewItem.findViewById(R.id.view);
 
         ScrollHome product = cartItems.get(position);
         Picasso.get().load(product.getImage()).into(image);
         name.setText(String.valueOf(product.getName()));
         price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             Intent intent = new Intent(context, ProductProfileActivity.class);
+             context.startActivity(intent);
+            }
+        });
 
 
         return listViewItem;
