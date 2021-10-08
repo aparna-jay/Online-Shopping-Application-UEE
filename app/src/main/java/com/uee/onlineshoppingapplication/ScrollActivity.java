@@ -55,8 +55,6 @@ public class ScrollActivity extends AppCompatActivity {
         languages.add("සිංහල");
         languages.add("தமிழ்");
 
-
-
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(getApplicationContext(), R.layout.language_spinner_item, languages);
         // Drop down layout style - list view with radio button
