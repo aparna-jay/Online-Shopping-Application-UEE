@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView19"
-        android:layout_width="349dp"
-        android:layout_height="650dp"
+        android:layout_width="358dp"
+        android:layout_height="565dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="30dp"
@@ -129,7 +129,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <EditText
+    <Spinner
         android:id="@+id/tbCardType"
         android:layout_width="270dp"
         android:layout_height="47dp"
