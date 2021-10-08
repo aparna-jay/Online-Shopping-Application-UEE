@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.ShoppingCart;
 import com.uee.onlineshoppingapplication.OnlineDB.User;
 
@@ -30,7 +32,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
     List<ShoppingCart> carts;
     ProgressDialog loading;
     int totalPrice = 0;
-    TextView totPrice;
+    TextView totPrice,name_payment,exp_payment,cardtype_payment,totPriceTitle;
+    Button checkout;
 
 
     @Override
@@ -40,6 +43,18 @@ public class ShoppingCartActivity extends AppCompatActivity {
         dbref = FirebaseDatabase.getInstance().getReference("cart");
         cartListView = (ListView) findViewById(R.id.cartListView);
         totPrice = (TextView) findViewById(R.id.totPrice);
+        name_payment = (TextView) findViewById(R.id.name_payment);
+        exp_payment = (TextView) findViewById(R.id.exp_payment);
+        cardtype_payment = (TextView) findViewById(R.id.cardtype_payment);
+        totPriceTitle = (TextView) findViewById(R.id.totPriceTitle);
+        checkout = (Button) findViewById(R.id.checkout);
+
+        cardtype_payment.setText(LanguageSetter.getresources().getString(R.string.quatity_shoppingcart));
+        exp_payment.setText(LanguageSetter.getresources().getString(R.string.price_shoppigcart));
+        name_payment.setText(LanguageSetter.getresources().getString(R.string.product_shoppingcart));
+        totPriceTitle.setText(LanguageSetter.getresources().getString(R.string.subtotal_shoppingcart));
+        checkout.setText(LanguageSetter.getresources().getString(R.string.checkoutbutton_shoppingcart));
+
         carts = new ArrayList<>();
         if (LoginActivity.loggedUser == null){
             userID = "temp";
