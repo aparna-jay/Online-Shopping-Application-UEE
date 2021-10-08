@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,11 +35,12 @@ public class ScrollActivity extends AppCompatActivity {
 //    ImageView Image4;
 //    ImageView Image5;
 //    ImageView Image6;
+    private FirebaseUser fUser;
     Spinner languageSpinner;
     String Text;
     TextView txtLogo;
     ListView productListView;
-    String user;
+    String user ;
     DatabaseReference dbref;
     List<ScrollHome> products;
 
@@ -51,6 +54,17 @@ public class ScrollActivity extends AppCompatActivity {
         dbref = FirebaseDatabase.getInstance().getReference("products");
         productListView = (ListView) findViewById(R.id.prListView);
         products = new ArrayList<>();
+
+//        if (LoginActivity.loggedUser == null){
+//            user = "null";
+//        }
+//        else {
+//            user = LoginActivity.loggedUser;
+//        }
+//        Log.e("Logged User", user);
+//
+//        fUser = FirebaseAuth.getInstance().getCurrentUser();
+//        dbref = FirebaseDatabase.getInstance().getReference("users");
 
 //        Image1=(ImageView)findViewById(R.id.img1);
 //        Image2=(ImageView)findViewById(R.id.img2);
