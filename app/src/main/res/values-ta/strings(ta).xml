@@ -34,4 +34,8 @@
     <string name="exp_payment">EXP</string>
     <string name="title_payment">Enter Payment Information</string>
     <string name="paybutton_payment">PAY</string>
+    <string name="title_selectp">Select Your Payment Method</string>
+    <string name="cardpayment_selectp">Card Payment</string>
+    <string name="cashondelivery_selectp">Cash on Delivery</string>
+    <string name="next_selectp">NEXT</string>
 </resources>
