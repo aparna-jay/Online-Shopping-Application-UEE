@@ -1,6 +1,7 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.uee.onlineshoppingapplication.OnlineDB.ScrollHome;
+import com.uee.onlineshoppingapplication.OnlineDB.currencySetter;
 
 import java.util.List;
 
@@ -20,12 +22,17 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
 
     private Activity context;
     List<ScrollHome> cartItems;
+    float number;
+    String currency_Type;
+
     DatabaseReference updateReference;
 
-    public ScrollAdapter(Activity context, List<ScrollHome> cartItems) {
+    public ScrollAdapter(Activity context, List<ScrollHome> cartItems,float number, String currency_Type) {
         super(context, R.layout.scroll_row, cartItems);
         this.context = context;
         this.cartItems = cartItems;
+        this.number = number;
+        this.currency_Type=currency_Type;
     }
 
 
@@ -41,10 +48,16 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
         ScrollHome product = cartItems.get(position);
         Picasso.get().load(product.getImage()).into(image);
         name.setText(String.valueOf(product.getName()));
-        price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
+//        price.setText("Rs. " + String.valueOf(product.getPrice())+ ".00");
 
-
+        double value123 = convertvalue(number,Integer.parseInt(product.getPrice()));
+        Log.e("","aaa"+value123);
+        price.setText(currency_Type+ "  " + String.valueOf(Math.round(value123)));
         return listViewItem;
+    }
+
+    public float convertvalue(float val1 , float val2){
+        return (val1 * val2);
     }
 
 }

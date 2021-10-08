@@ -16,4 +16,16 @@
     <string name="phone_profile">Phone</string>
     <string name="password_profile">Password</string>
     <string name="logout_profile">Log out</string>
+
+    <string-array name="card_types">
+        <item>Visa</item>
+        <item>Master</item>
+        <item>Debit-card</item>
+    </string-array>
+
+
+    <string-array name="Currancy">
+        <item>Rs</item>
+        <item>USD</item>
+    </string-array>
 </resources>
