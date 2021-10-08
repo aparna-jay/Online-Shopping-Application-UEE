@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.User;
 
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseUsers;
     Button addUser;
     User user;
+    String Text;
+    TextView signUpTitle;
 
 
     @Override
@@ -41,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone = (TextView) findViewById(R.id.phone);
         password = (TextView) findViewById(R.id.password);
         addUser = (Button) findViewById(R.id.addUser);
+        signUpTitle = (TextView) findViewById(R.id.title_delivery);
 
         users = new ArrayList<>();
 
@@ -50,6 +54,14 @@ public class RegisterActivity extends AppCompatActivity {
                 addUsers();
             }
         });
+
+        signUpTitle.setText(LanguageSetter.getresources().getString(R.string.signup_titile_register));
+        username.setHint(LanguageSetter.getresources().getString(R.string.username_register));
+        email.setHint(LanguageSetter.getresources().getString(R.string.email_register));
+        address.setHint(LanguageSetter.getresources().getString(R.string.address_register));
+        phone.setHint(LanguageSetter.getresources().getString(R.string.phone_register));
+        password.setHint(LanguageSetter.getresources().getString(R.string.password_register));
+        addUser.setText(LanguageSetter.getresources().getString(R.string.register_button));
     }
 
 

@@ -18,7 +18,7 @@
 
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/name_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Product"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.093" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/exp_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.093" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/cardtype_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"

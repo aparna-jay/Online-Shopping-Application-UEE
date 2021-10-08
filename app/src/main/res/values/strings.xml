@@ -3,4 +3,50 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="autoCompleteTextView5">USD</string>
+    <string name="username_register">Enter Name</string>
+    <string name="email_register">Enter Email</string>
+    <string name="address_register">Enter Address</string>
+    <string name="phone_register">Enter Phone</string>
+    <string name="password_register">Enter Password</string>
+    <string name="signup_titile_register">Sign Up</string>
+    <string name="register_button">Register</string>
+    <string name="name_profile">Name</string>
+    <string name="email_profile">E-mail</string>
+    <string name="address_profile">Address</string>
+    <string name="phone_profile">Phone</string>
+    <string name="password_profile">Password</string>
+    <string name="logout_profile">Log out</string>
+    <string name="email_login">Enter Email</string>
+    <string name="password_login">Enter Password</string>
+    <string name="loginbutton_login">Login</string>
+    <string name="signupbutton_login">Sign Up</string>
+    <string name="donthave_login">Don\'t Have an Account ?</string>
+    <string name="name1_delivery">Name</string>
+    <string name="adress1_delivery">Delivery Address</string>
+    <string name="phone_delivery">Contact Number</string>
+    <string name="nextbutton_delivery">Next</string>
+    <string name="title_delivery">Enter Delivery Informations</string>
+    <string name="name_payment">Card Holder Name</string>
+    <string name="cardtype_payment">Card Type</string>
+    <string name="ccnumber_payment">CC Number</string>
+    <string name="cvv_payment">CVV</string>
+    <string name="exp_payment">EXP</string>
+    <string name="title_payment">Enter Payment Information</string>
+    <string name="paybutton_payment">PAY</string>
+    <string name="title_selectp">Select Your Payment Method</string>
+    <string name="cardpayment_selectp">Card Payment</string>
+    <string name="cashondelivery_selectp">Cash on Delivery</string>
+    <string name="next_selectp">NEXT</string>
+
+    <string-array name="card_types">
+        <item>Visa</item>
+        <item>Master</item>
+        <item>Debit-card</item>
+    </string-array>
+
+
+    <string-array name="Currancy">
+        <item>Rs</item>
+        <item>USD</item>
+    </string-array>
 </resources>

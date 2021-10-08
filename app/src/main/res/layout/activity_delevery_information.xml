@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".DeleveryInformationActivity">
 
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="319dp"
+        android:layout_height="546dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/formbackground" />
+
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/phone_delivery"
         android:layout_width="237dp"
         android:layout_height="35dp"
-        android:text="Contact Number"
+        android:text="@string/phone_delivery"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,10 +35,10 @@
         app:layout_constraintVertical_bias="0.577" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_delivery"
         android:layout_width="320dp"
         android:layout_height="52dp"
-        android:text="Enter Delivery Information"
+        android:text="@string/title_delivery"
         android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,14 +58,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/phone_delivery"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/name_delivery"
         android:layout_width="237dp"
         android:layout_height="35dp"
-        android:text="Name"
+        android:text="@string/name1_delivery"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,13 +82,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/address_delivery" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/address_delivery"
         android:layout_width="237dp"
         android:layout_height="35dp"
-        android:text="Delivery Address"
+        android:text="@string/adress1_delivery"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,13 +105,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/name_delivery" />
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/nextbutton_delivery"
         android:textSize="19sp"
         app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"

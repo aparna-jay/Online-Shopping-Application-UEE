@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.delivaryinfo;
 
 public class DeleveryInformationActivity extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class DeleveryInformationActivity extends AppCompatActivity {
     TextView nametext, tptext, addresstext;
     Button nextbtn;
     DatabaseReference databaseUsers;
+    TextView name_delivery,address_delivery,phone_delivery,title_delivery;
+
 
 
     @Override
@@ -31,6 +34,16 @@ public class DeleveryInformationActivity extends AppCompatActivity {
         addresstext = (TextView) findViewById(R.id.textboxaddress);
         tptext = (TextView) findViewById(R.id.textboxtp);
         nextbtn = (Button) findViewById(R.id.btnNext);
+        address_delivery = (TextView) findViewById(R.id.address_delivery);
+        phone_delivery = (TextView) findViewById(R.id.phone_delivery);
+        name_delivery = (TextView) findViewById(R.id.name_delivery);
+        title_delivery = (TextView) findViewById(R.id.title_delivery);
+
+        address_delivery.setText(LanguageSetter.getresources().getString(R.string.adress1_delivery));
+        phone_delivery.setText(LanguageSetter.getresources().getString(R.string.phone_delivery));
+        title_delivery.setText(LanguageSetter.getresources().getString(R.string.title_delivery));
+        name_delivery.setText(LanguageSetter.getresources().getString(R.string.name1_delivery));
+        nextbtn.setText(LanguageSetter.getresources().getString(R.string.nextbutton_delivery));
 
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
