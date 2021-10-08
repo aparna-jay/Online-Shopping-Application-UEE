@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     String user;
     DatabaseReference dbref;
     List<ShoppingCart> carts;
+    ProgressDialog loading;
 
 
     @Override
@@ -39,6 +41,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        loading = ProgressDialog.show(ShoppingCartActivity.this, "Fetching Data...", "Please wait...", true, true);
         //attaching value event listener
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -57,6 +60,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 }
                 CartListAdapter cartListAdapter = new CartListAdapter(ShoppingCartActivity.this, carts);
                 cartListView.setAdapter(cartListAdapter);
+                loading.dismiss();
             }
 
             @Override
