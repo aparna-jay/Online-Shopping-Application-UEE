@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.ShoppingCart;
 import com.uee.onlineshoppingapplication.OnlineDB.User;
 
@@ -63,6 +64,8 @@ public class ProductProfileActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageView);
         plus = (ImageButton) findViewById(R.id.plus);
         minus = (ImageButton) findViewById(R.id.minus);
+
+        addToCart.setText(LanguageSetter.getresources().getString(R.string.addtocart_productp));
 
         name.setText(itemName);
         price.setText("Rs " + itemPrice + ".00");

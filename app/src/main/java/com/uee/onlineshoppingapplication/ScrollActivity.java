@@ -1,12 +1,16 @@
 package com.uee.onlineshoppingapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -19,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
@@ -31,21 +36,19 @@ import java.util.List;
 
 public class ScrollActivity extends AppCompatActivity {
 
-//    ImageView Image1;
-//    ImageView Image2;
-//    ImageView Image3;
-//    ImageView Image4;
-//    ImageView Image5;
-//    ImageView Image6;
     private FirebaseUser fUser;
     Spinner languageSpinner ,currancySpinner;
     String Text;
     TextView txtLogo;
     ListView productListView;
     String user ;
+    String userID;
     DatabaseReference dbref;
     List<ScrollHome> products;
     String text;
+    //search
+    private AutoCompleteTextView txtSearch;
+
 //    int valueMult ;
 float number1;
 
@@ -58,6 +61,21 @@ float number1;
         dbref = FirebaseDatabase.getInstance().getReference("products");
         productListView = (ListView) findViewById(R.id.prListView);
         products = new ArrayList<>();
+        txtSearch = (AutoCompleteTextView) findViewById(R.id.search);
+
+        ValueEventListener event = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                populateSearch(snapshot);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+
+        dbref.addListenerForSingleValueEvent(event);
 
 //        if (LoginActivity.loggedUser == null){
 //            user = "null";
@@ -70,12 +88,16 @@ float number1;
 //        fUser = FirebaseAuth.getInstance().getCurrentUser();
 //        dbref = FirebaseDatabase.getInstance().getReference("users");
 
-//        Image1=(ImageView)findViewById(R.id.img1);
-//        Image2=(ImageView)findViewById(R.id.img2);
-//        Image3=(ImageView)findViewById(R.id.img3);
-//        Image4=(ImageView)findViewById(R.id.img4);
-//        Image5=(ImageView)findViewById(R.id.img5);
-//        Image6=(ImageView)findViewById(R.id.img6);d
+//        if (LoginActivity.loggedUser == null){
+//            userID = "t";
+//        }
+//        else {
+//            userID = LoginActivity.loggedUser;
+//        }
+//        Log.e("Logged User", user);
+//
+
+
         txtLogo=(TextView)findViewById(R.id.txtLogo);
         languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
 
@@ -112,14 +134,7 @@ float number1;
             }
         });
 
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/frock.png?alt=media&token=aed6d16f-9739-40a8-ba0b-51e6a3576b35").into(Image1);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/image-retrieve-33687.appspot.com/o/images%2Fcam1.jpeg?alt=media&token=ed6db825-e481-49d1-a7ff-8d9047ec59c2").into(Image2);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/watch.jpeg?alt=media&token=d0ae14f1-d1ec-40e4-a86a-22d90e8d9bce").into(Image3);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/tshirt.png?alt=media&token=5c105284-bb1d-4df6-b295-e3652d869711").into(Image4);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/shoes2.png?alt=media&token=b2cf57f7-01dd-4940-bff7-c2f5fa3e9a82").into(Image5);
-//        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/online-shopping-applicat-a6cd2.appspot.com/o/watch2.jpeg?alt=media&token=9a0753ef-846b-4b43-b76b-9a9625012e3c").into(Image6);
-
-        // Spinner click listene
+  // Spinner click listene
         // Spinner Drop down elements
         List<String> languages = new ArrayList<String>();
         languages.add("English");
@@ -146,6 +161,63 @@ float number1;
         });
     }
 
+    //search
+    private void populateSearch(DataSnapshot snapshot) {
+        ArrayList<String> names= new ArrayList<>();
+        if(snapshot.exists()){
+            for (DataSnapshot ds:snapshot.getChildren()){
+                String name = ds.child("name").getValue(String.class);
+                names.add(name);
+            }
+            //set search details
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, names);
+            txtSearch.setAdapter(adapter);
+
+            //get search details
+            txtSearch.setOnClickListener(new AdapterView.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String name = txtSearch.getText().toString();
+                    searchUser(name);
+                }
+
+            });
+        }else {
+            Log.d("products", "No data found!");
+        }
+    }
+
+    //display search details
+    private void searchUser(String name) {
+        Query query = dbref.orderByChild("name").equalTo(name);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    ArrayList<String> listProducts = new ArrayList<>();
+
+                    for (DataSnapshot ds:snapshot.getChildren()){
+                        ScrollHome prdct = new ScrollHome(ds.child("id").getValue(String.class),ds.child("name").getValue(String.class),
+                                ds.child("price").getValue(String.class),ds.child("image").getValue(String.class),
+                                ds.child("description").getValue(String.class), ds.child("userId").getValue(String.class));
+                        listProducts.add(prdct.getName() + "\n"+ prdct.getPrice()+"\n\n");
+                    }
+                    ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_expandable_list_item_1,listProducts);
+                    productListView.setAdapter(adapter);
+
+                }else {
+                    Log.d("products", "No data found!");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -159,15 +231,20 @@ float number1;
 
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //getting cart item
+                    //getting product item
                     ScrollHome scrollHome = postSnapshot.getValue(ScrollHome.class);
-                    //adding cart item to the list
-                    Log.e("Product list", " " + scrollHome.getName());
-                    products.add(scrollHome);
+                    //adding product item to the favourite list
+//                    if(scrollHome.getUserId().equals(userID)) {
+                        Log.e("Product list", " " + scrollHome.getName());
+                        products.add(scrollHome);
+
+
                 }
+
                 number1 = currencySetter.getValue();
                 ScrollAdapter scrollAdapter = new ScrollAdapter(ScrollActivity.this, products , number1,text);
                 productListView.setAdapter(scrollAdapter);
+//                Toast.makeText(getApplicationContext(), "Added to the Favourites!", Toast.LENGTH_SHORT).show();
             }
 
             @Override

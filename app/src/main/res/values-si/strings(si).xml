@@ -38,4 +38,15 @@
     <string name="cardpayment_selectp">කාඩ් ගෙවීම</string>
     <string name="cashondelivery_selectp">මුදල් මත බෙදා හැරීම</string>
     <string name="next_selectp">ඊළඟ</string>
+    <string name="addtocart_productp">මිලදී ගන්න</string>
+    <string name="product_shoppingcart">නිෂ්පාදනය</string>
+    <string name="price_shoppigcart">මිල</string>
+    <string name="quatity_shoppingcart">ප්රමාණය</string>
+    <string name="subtotal_shoppingcart">මුළු ශේෂය =</string>
+    <string name="checkoutbutton_shoppingcart">පිට වීම</string>
+    <string name="product_favourite">නිෂ්පාදන</string>
+    <string name="price_favourite">මිල</string>
+    <string name="remove_favourite">ඉවත් කරන්න</string>
+    <string name="favourite_favourite">ප්රියතම</string>
+    <string name="items_favourite">අයිතම</string>
 </resources>

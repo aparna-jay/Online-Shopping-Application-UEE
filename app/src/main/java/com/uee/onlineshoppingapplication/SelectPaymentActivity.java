@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 
-
 public class SelectPaymentActivity extends AppCompatActivity {
 
     TextView title_selectp;

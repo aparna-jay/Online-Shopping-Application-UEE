@@ -37,6 +37,17 @@
     <string name="cardpayment_selectp">Card Payment</string>
     <string name="cashondelivery_selectp">Cash on Delivery</string>
     <string name="next_selectp">NEXT</string>
+    <string name="addtocart_productp">Add To Cart</string>
+    <string name="product_shoppingcart">Product</string>
+    <string name="price_shoppigcart">Price</string>
+    <string name="quatity_shoppingcart">Quantity</string>
+    <string name="subtotal_shoppingcart">Sub Total =</string>
+    <string name="checkoutbutton_shoppingcart">Checkout</string>
+    <string name="product_favourite">Product</string>
+    <string name="price_favourite">Price</string>
+    <string name="remove_favourite">Remove</string>
+    <string name="favourite_favourite">Favourite</string>
+    <string name="items_favourite">Items</string>
 
     <string-array name="card_types">
         <item>Visa</item>
