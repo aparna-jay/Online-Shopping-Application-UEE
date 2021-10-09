@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -89,6 +90,8 @@ public class DeleveryInformationActivity extends AppCompatActivity {
 
             //displaying a success toast
             Toast.makeText(this, "information added", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(getApplicationContext(), PaymentInformationActivity.class);
+            startActivity(i);
         } else {
             //if the value is not given displaying a toast
             Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
