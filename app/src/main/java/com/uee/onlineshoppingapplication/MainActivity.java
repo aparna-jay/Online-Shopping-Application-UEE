@@ -71,17 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent4 = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent4);
                 break;
-            case R.id.nav_payment:
-                Intent intent5 = new Intent(getApplicationContext(), PaymentInformationActivity.class);
-                startActivity(intent5);
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-
-                break;
-            case R.id.nav_rate:
-                Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
-                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -15,6 +15,7 @@ public class SelectPaymentActivity extends AppCompatActivity {
     TextView title_selectp;
 //    RadioButton radio_pirates,radio_ninjas;
     Button buttonnext;
+    String totPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,15 @@ public class SelectPaymentActivity extends AppCompatActivity {
         Button btn = (Button) findViewById(R.id.buttonnext);
 
         title_selectp.setText(LanguageSetter.getresources().getString(R.string.title_selectp));
-        buttonnext.setText(LanguageSetter.getresources().getString(R.string.next_selectp));
+        btn.setText(LanguageSetter.getresources().getString(R.string.next_selectp));
+
+        Bundle extras = getIntent().getExtras();
+
+
+        if (extras != null) {
+            totPrice = extras.getString("EXTRA_TOTAL");
+            // and get whatever type user account id is
+        }
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +47,11 @@ public class SelectPaymentActivity extends AppCompatActivity {
 //                startActivity(myIntent);
 
                 if(radioYes.isChecked()){
-                    Intent intent = new Intent(SelectPaymentActivity.this, DeleveryInformationActivity.class);
+                    Intent intent = new Intent(SelectPaymentActivity.this, PaymentInformationActivity.class);
+                    intent.putExtra("EXTRA_TOTAL", totPrice);
                     startActivity(intent);
                 }else if(radioNo.isChecked()){
-                    Intent intent = new Intent(SelectPaymentActivity.this, PaymentInformationActivity.class);
+                    Intent intent = new Intent(SelectPaymentActivity.this, DeleveryInformationActivity.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Select the radio button",Toast.LENGTH_LONG).show();

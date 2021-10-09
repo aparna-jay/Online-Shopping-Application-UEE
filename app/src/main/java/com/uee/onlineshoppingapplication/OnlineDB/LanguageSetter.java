@@ -18,21 +18,19 @@ public class LanguageSetter {
     }
     public static void changeLanguage(String language, Context c){
         //if user select prefered language as English then
-        if(language.equals("English") )
+        if(language.equals("English"))
         {
             context = LocaleHelper.setLocale(c, "en");
             resources = context.getResources();
         }
-        //if user select prefered language as Tamil then
-        if(language.equals("தமிழ்"))
-        {
-            context = LocaleHelper.setLocale(c, "ta");
-            resources = context.getResources();
-        }
         //if user select prefered language as Sinhala then
-        if(language.equals("සිංහල"))
+        else if(language.equals("සිංහල"))
         {
             context = LocaleHelper.setLocale(c, "si");
+            resources = context.getResources();
+        }
+        else{
+            context = LocaleHelper.setLocale(c, "en");
             resources = context.getResources();
         }
     }

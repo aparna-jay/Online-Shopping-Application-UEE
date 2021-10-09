@@ -33,12 +33,6 @@
                     android:title="Profile" />
 
                 <item
-                    android:id="@+id/nav_payment"
-                    android:icon="@drawable/payment_icon"
-                    android:title="Payment" />
-
-
-                <item
                     android:id="@+id/nav_login"
                     android:icon="@drawable/login_icon"
                     android:title="Login" />
@@ -47,18 +41,11 @@
         </item>
     </group>
 
-    <item android:title="Contact Us">
+    <item android:title="">
 
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/share_icon"
-                android:title="Share" />
+            <item android:title=""/>
 
-            <item
-                android:id="@+id/nav_rate"
-                android:icon="@drawable/ic_baseline_star_rate_24"
-                android:title="Rate" />
 
         </menu>
 

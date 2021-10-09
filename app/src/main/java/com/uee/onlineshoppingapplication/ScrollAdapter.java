@@ -1,6 +1,8 @@
 package com.uee.onlineshoppingapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Intent;
 import android.database.Cursor;
@@ -78,14 +80,34 @@ public class ScrollAdapter extends ArrayAdapter<ScrollHome>{
         favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    //getting a unique id using push().getKey() method
-                    String id = Reference.push().getKey();;
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(R.string.app_name);
+                builder.setMessage("Do you want to add this item to favourites ?");
+                builder.setIcon(R.drawable.lehesi);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        //getting a unique id using push().getKey() method
+                        String id1 = Reference.push().getKey();;
 
-                    //creating an Object
-                    Favourites fav = new Favourites(id, product.getPrice(), product.getImage(), user);
+                        //creating an Object
+                        Favourites fav = new Favourites(id1, product.getPrice(), product.getImage(), user);
 
-                    //Saving
-                    Reference.child(id).setValue(fav);
+                        //Saving
+                        Reference.child(id1).setValue(fav);
+                        Toast.makeText(context, "Item added", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+
+
+
 
             }
         });
