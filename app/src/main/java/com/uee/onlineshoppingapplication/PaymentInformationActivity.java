@@ -91,7 +91,7 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
         String cvv = CVVtext.getText().toString().trim();
 
 
-
+        if(cvv.length() == 3 || cvv.length() == 4 ) {
         //checking if the value is provided
         if (!TextUtils.isEmpty(name)) {
 
@@ -113,11 +113,15 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
 
             //displaying a success toast
             Toast.makeText(this, "payment information added", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(PaymentInformationActivity.this, MainActivity.class);
+            Intent intent = new Intent(PaymentInformationActivity.this, ScrollActivity.class);
             startActivity(intent);
         } else {
             //if the value is not given displaying a toast
             Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+        }
+        }
+        else{
+            Toast.makeText(this, "Please enter a valid cvv number", Toast.LENGTH_LONG).show();
         }
     }
 
