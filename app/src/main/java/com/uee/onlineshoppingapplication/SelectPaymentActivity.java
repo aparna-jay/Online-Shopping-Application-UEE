@@ -52,6 +52,7 @@ public class SelectPaymentActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else if(radioNo.isChecked()){
                     Intent intent = new Intent(SelectPaymentActivity.this, DeleveryInformationActivity.class);
+                    intent.putExtra("EXTRA_TOTAL", totPrice);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Select the radio button",Toast.LENGTH_LONG).show();

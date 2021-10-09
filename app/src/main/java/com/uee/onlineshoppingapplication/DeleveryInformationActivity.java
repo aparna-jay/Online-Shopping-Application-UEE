@@ -21,6 +21,7 @@ public class DeleveryInformationActivity extends AppCompatActivity {
     Button nextbtn;
     DatabaseReference databaseUsers;
     TextView name_delivery,address_delivery,phone_delivery,title_delivery;
+    String totPrice;
 
 
 
@@ -52,6 +53,11 @@ public class DeleveryInformationActivity extends AppCompatActivity {
                 addDeliveryInfo();
             }
         });
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            totPrice = extras.getString("EXTRA_TOTAL");
+        }
 
     }
 
@@ -91,6 +97,7 @@ public class DeleveryInformationActivity extends AppCompatActivity {
             //displaying a success toast
             Toast.makeText(this, "information added", Toast.LENGTH_LONG).show();
             Intent i = new Intent(getApplicationContext(), PaymentInformationActivity.class);
+            i.putExtra("EXTRA_TOTAL", totPrice);
             startActivity(i);
         } else {
             //if the value is not given displaying a toast
