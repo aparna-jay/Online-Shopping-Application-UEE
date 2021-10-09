@@ -44,4 +44,9 @@
     <string name="quatity_shoppingcart">ප්රමාණය</string>
     <string name="subtotal_shoppingcart">මුළු ශේෂය =</string>
     <string name="checkoutbutton_shoppingcart">පිට වීම</string>
+    <string name="product_favourite">නිෂ්පාදන</string>
+    <string name="price_favourite">මිල</string>
+    <string name="remove_favourite">ඉවත් කරන්න</string>
+    <string name="favourite_favourite">ප්රියතම</string>
+    <string name="items_favourite">අයිතම</string>
 </resources>

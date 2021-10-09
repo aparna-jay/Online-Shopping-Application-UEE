@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.uee.onlineshoppingapplication.OnlineDB.Favourites;
+import com.uee.onlineshoppingapplication.OnlineDB.LanguageSetter;
 import com.uee.onlineshoppingapplication.OnlineDB.ScrollHome;
 import com.uee.onlineshoppingapplication.OnlineDB.currencySetter;
 
@@ -33,6 +34,7 @@ public class FavouriteNEWActivity extends AppCompatActivity {
     String user ;
     DatabaseReference reference;
     List<Favourites> fav;
+    TextView favourite_favourite,items_favourite,product_favourite,price_favourite,remove_favourite;
 
 
     @Override
@@ -43,6 +45,11 @@ public class FavouriteNEWActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("favourites");
         favListView = (ListView) findViewById(R.id.fListView);
         fav = new ArrayList<>();
+        favourite_favourite = (TextView) findViewById(R.id.favourite_favourite);
+        items_favourite = (TextView) findViewById(R.id.items_favourite);
+        product_favourite = (TextView) findViewById(R.id.product_favourite);
+        price_favourite = (TextView) findViewById(R.id.price_favourite);
+        remove_favourite = (TextView) findViewById(R.id.remove_favourite);
 
 //        LayoutInflater inflater = getLayoutInflater();
 //        View listViewItem = inflater.inflate(R.layout.favourite_row, null, true);
@@ -50,6 +57,12 @@ public class FavouriteNEWActivity extends AppCompatActivity {
 //        Intent i = getIntent();
 //        String image = i.getStringExtra("");
 //        String price = i.getStringExtra("");
+
+        favourite_favourite.setText(LanguageSetter.getresources().getString(R.string.favourite_favourite));
+        items_favourite.setText(LanguageSetter.getresources().getString(R.string.items_favourite));
+        product_favourite.setText(LanguageSetter.getresources().getString(R.string.product_favourite));
+        price_favourite.setText(LanguageSetter.getresources().getString(R.string.price_favourite));
+        remove_favourite.setText(LanguageSetter.getresources().getString(R.string.remove_favourite));
 
     }
 
