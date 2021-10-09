@@ -43,25 +43,20 @@ public class ShoppingCartActivity extends AppCompatActivity {
         dbref = FirebaseDatabase.getInstance().getReference("cart");
         cartListView = (ListView) findViewById(R.id.cartListView);
         totPrice = (TextView) findViewById(R.id.totPrice);
-        name_payment = (TextView) findViewById(R.id.name_payment);
-        exp_payment = (TextView) findViewById(R.id.exp_payment);
-        cardtype_payment = (TextView) findViewById(R.id.cardtype_payment);
-        totPriceTitle = (TextView) findViewById(R.id.totPriceTitle);
         checkout = (Button) findViewById(R.id.checkout);
-
-        cardtype_payment.setText(LanguageSetter.getresources().getString(R.string.quatity_shoppingcart));
-        exp_payment.setText(LanguageSetter.getresources().getString(R.string.price_shoppigcart));
-        name_payment.setText(LanguageSetter.getresources().getString(R.string.product_shoppingcart));
-        totPriceTitle.setText(LanguageSetter.getresources().getString(R.string.subtotal_shoppingcart));
-        checkout.setText(LanguageSetter.getresources().getString(R.string.checkoutbutton_shoppingcart));
 
         carts = new ArrayList<>();
         if (LoginActivity.loggedUser == null){
-            userID = "temp";
+            userID = "";
         }
         else {
             userID = LoginActivity.loggedUser;
         }
+
+
+
+
+
     }
 
     @Override
@@ -90,6 +85,14 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 cartListView.setAdapter(cartListAdapter);
                 loading.dismiss();
                 totPrice.setText("Rs "+ String.valueOf(totalPrice)+ ".00");
+                checkout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ShoppingCartActivity.this, SelectPaymentActivity.class);
+                        intent.putExtra("EXTRA_TOTAL", String.valueOf(totalPrice));
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,11 +20,11 @@ import com.uee.onlineshoppingapplication.OnlineDB.paymentinfo;
 
 public class PaymentInformationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView nametext, expdatetext,CardNumber,CVVtext;
+    TextView nametext, expdatetext,CardNumber,CVVtext, total;
     Spinner cTypetext;
     Button btnPay;
     DatabaseReference databaseUsers;
-    String  text;
+    String  text, totPrice;
     TextView name_payment,cardtype_payment,ccnumber_payment,exp_payment,cvv_payment,title_payment;
 
     @Override
@@ -45,6 +46,13 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
         cvv_payment = (TextView) findViewById(R.id.cvv_payment);
         title_payment = (TextView) findViewById(R.id.title_payment);
         btnPay = (Button) findViewById(R.id.btnpay);
+        total = (TextView) findViewById(R.id.totalPrice);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            totPrice = extras.getString("EXTRA_TOTAL");
+            total.setText(totPrice);
+        }
 
         name_payment.setText(LanguageSetter.getresources().getString(R.string.name_payment));
         cardtype_payment.setText(LanguageSetter.getresources().getString(R.string.cardtype_payment));
@@ -83,7 +91,7 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
         String cvv = CVVtext.getText().toString().trim();
 
 
-
+        if(cvv.length() == 3 || cvv.length() == 4 ) {
         //checking if the value is provided
         if (!TextUtils.isEmpty(name)) {
 
@@ -105,9 +113,15 @@ public class PaymentInformationActivity extends AppCompatActivity implements Ada
 
             //displaying a success toast
             Toast.makeText(this, "payment information added", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(PaymentInformationActivity.this, ScrollActivity.class);
+            startActivity(intent);
         } else {
             //if the value is not given displaying a toast
             Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+        }
+        }
+        else{
+            Toast.makeText(this, "Please enter a valid cvv number", Toast.LENGTH_LONG).show();
         }
     }
 

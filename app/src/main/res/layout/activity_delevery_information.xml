@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="319dp"
-        android:layout_height="546dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="30dp"
@@ -36,14 +36,13 @@
 
     <TextView
         android:id="@+id/title_delivery"
-        android:layout_width="320dp"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:text="@string/title_delivery"
         android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.108" />
@@ -51,7 +50,8 @@
     <EditText
         android:id="@+id/textboxtp"
         android:layout_width="214dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +76,8 @@
     <EditText
         android:id="@+id/textboxaddress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,13 +100,16 @@
     <EditText
         android:id="@+id/textboxname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_delivery" />
+        app:layout_constraintTop_toBottomOf="@+id/name_delivery"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnNext"

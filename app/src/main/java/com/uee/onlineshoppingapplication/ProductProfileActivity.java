@@ -2,6 +2,8 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -111,6 +113,27 @@ public class ProductProfileActivity extends AppCompatActivity {
      * Firebase Realtime Database
      * */
     private void addToCart() {
+    if(userID.equals("temp")) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ProductProfileActivity.this);
+        builder.setTitle(R.string.app_name);
+        builder.setMessage("Please login to add items to cart");
+        builder.setIcon(R.drawable.lehesi);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+                Intent intent = new Intent(ProductProfileActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+    else {
         //getting the values to save
         String itemQuantity = quantity.getText().toString().trim();
 
@@ -128,6 +151,7 @@ public class ProductProfileActivity extends AppCompatActivity {
         Toast.makeText(this, "Item added to cart", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(ProductProfileActivity.this, ScrollActivity.class);
         startActivity(intent);
+    }
     }
 
 

@@ -3,6 +3,7 @@ package com.uee.onlineshoppingapplication;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ public class FavouriteAdapter extends ArrayAdapter<Favourites> {
     private Activity context;
     List<Favourites> favItems;
     DatabaseReference Reference;
-    Button favDelete;
+    Button favDelete, addToCart;
     String user;
 
     public FavouriteAdapter(Activity context, List<Favourites> favItems) {
@@ -43,6 +44,7 @@ public class FavouriteAdapter extends ArrayAdapter<Favourites> {
         ImageView image = (ImageView) listViewItem.findViewById(R.id.imageV);
         TextView price = (TextView) listViewItem.findViewById(R.id.price1);
         favDelete = (Button)  listViewItem.findViewById(R.id.delButtonstr);
+        addToCart = (Button)  listViewItem.findViewById(R.id.addToCart);
 
         Favourites favr = favItems.get(position);
         Picasso.get().load(favr.getImage()).into(image);
@@ -59,6 +61,38 @@ public class FavouriteAdapter extends ArrayAdapter<Favourites> {
 
                 Toast.makeText(context.getApplicationContext(), "Successfully Deleted From Favourites!", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        addToCart.setOnClickListener(new View.OnClickListener() {
+
+
+
+            @Override
+            public void onClick(View view) {
+            if (LoginActivity.loggedUser == null){
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(R.string.app_name);
+                builder.setMessage("Please login to add items to cart");
+                builder.setIcon(R.drawable.lehesi);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        context.startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+            else {
+                Toast.makeText(context.getApplicationContext(), "Item added to cart", Toast.LENGTH_SHORT).show();
+            }
             }
         });
 

@@ -42,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         login.setText(LanguageSetter.getresources().getString(R.string.loginbutton_login));
         createAccount.setText(LanguageSetter.getresources().getString(R.string.signupbutton_login));
 
-        Intent intent = new Intent(LoginActivity.this, SplashScreenActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(LoginActivity.this, SplashScreenActivity.class);
+//        startActivity(intent);
 
         //go to the create account acctivity.
         createAccount.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (passwordFromDB.equals(userEnteredPassword)) {
                         Toast.makeText(getApplicationContext(), "valid user", Toast.LENGTH_SHORT).show();
                         loggedUser = email.getText().toString().split("@")[0];
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, ScrollActivity.class);
                         intent.putExtra("user",email.getText().toString().split("@")[0]);
                         startActivity(intent);
                         finish();

@@ -46,11 +46,8 @@ public class ScrollActivity extends AppCompatActivity {
     DatabaseReference dbref;
     List<ScrollHome> products;
     String text;
-    //search
     private AutoCompleteTextView txtSearch;
-
-//    int valueMult ;
-float number1;
+    float number1;
 
 
     @Override
@@ -77,25 +74,6 @@ float number1;
 
         dbref.addListenerForSingleValueEvent(event);
 
-//        if (LoginActivity.loggedUser == null){
-//            user = "null";
-//        }
-//        else {
-//            user = LoginActivity.loggedUser;
-//        }
-//        Log.e("Logged User", user);
-//
-//        fUser = FirebaseAuth.getInstance().getCurrentUser();
-//        dbref = FirebaseDatabase.getInstance().getReference("users");
-
-//        if (LoginActivity.loggedUser == null){
-//            userID = "t";
-//        }
-//        else {
-//            userID = LoginActivity.loggedUser;
-//        }
-//        Log.e("Logged User", user);
-//
 
 
         txtLogo=(TextView)findViewById(R.id.txtLogo);
@@ -118,7 +96,6 @@ float number1;
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 text = parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
                 currencySetter.setC_type(text);
                 currencySetter.changeCurrency(text);
                 number1 = currencySetter.getValue();
@@ -139,7 +116,6 @@ float number1;
         List<String> languages = new ArrayList<String>();
         languages.add("English");
         languages.add("සිංහල");
-        languages.add("தமிழ்");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterType = new ArrayAdapter<String>(getApplicationContext(), R.layout.language_spinner_item, languages);

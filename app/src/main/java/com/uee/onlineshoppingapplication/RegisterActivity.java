@@ -2,6 +2,7 @@ package com.uee.onlineshoppingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -113,31 +114,39 @@ public class RegisterActivity extends AppCompatActivity {
         String password1 = password.getText().toString().trim();
         //       String genre = spinnerGenre.getSelectedItem().toString();
 
-        //checking if the value is provided
-        if (!TextUtils.isEmpty(name)) {
+        if(phone1.length() == 10) {
+            //checking if the value is provided
+            if (!TextUtils.isEmpty(name)) {
 
-            //getting a unique id using push().getKey() method
-            //it will create a unique id and we will use it as the Primary Key for our Artist
-            String id = email1.split("@")[0];
+                //getting a unique id using push().getKey() method
+                //it will create a unique id and we will use it as the Primary Key for our Artist
+                String id = email1.split("@")[0];
 
-            //creating an Artist Object
-            User user = new User(id, name,email1,address1,phone1,password1);
+                //creating an Artist Object
+                User user = new User(id, name, email1, address1, phone1, password1);
 
-            //Saving the Artist
-            databaseUsers.child(id).setValue(user);
+                //Saving the Artist
+                databaseUsers.child(id).setValue(user);
 
-            //setting edittext to blank again
-            username.setText("");
-            email.setText("");
-            address.setText("");
-            phone.setText("");
-            password.setText("");
+                //setting edittext to blank again
+                username.setText("");
+                email.setText("");
+                address.setText("");
+                phone.setText("");
+                password.setText("");
 
-            //displaying a success toast
-            Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
-        } else {
-            //if the value is not given displaying a toast
-            Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+                //displaying a success toast
+                Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            } else {
+                //if the value is not given displaying a toast
+                Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+            }
+        }
+        else{
+            Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_LONG).show();
         }
     }
+
 }
